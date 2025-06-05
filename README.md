@@ -1,23 +1,44 @@
-# innovacion.mapplics
+# Proyecto Innovación Mapplics
 
-#Caso de uso 1, proyecto nuevo desde cero.
-#1- Redaccion estructura de lo que se quiere hacer, esto deberia contener tecnologia, arquitectura, descripcion del negocio, casos de uso. 
+## Introducción
 
-#2- Seleccion del modelo a utilizar:
-Opciones a elegir/evaluar Claude 4 pareciera ser el mejor, pero tambien tenemos modelos como gemini 2.5 pro, que se pueden utilizar para redactar y resolver casos mas complejos donde necesitemos modelar o resolver algo antes iniciar el proyecto. Claude 4 en las pruebas que hemos hecho es uno de los que mejor funciona para la escritura de codigo. 
+Este proyecto está diseñado para facilitar la implementación y ejecución de casos de ejemplo organizados en subdirectorios. La estructura modular permite desarrollar, probar y demostrar soluciones en entornos aislados de manera sencilla.
 
-#3- Una ves que tenemos una descripcion basica de lo que queremos hacer, debemos relizar una documentacion detallada con la estructura del proyecto que nos servira luego como contexto para poder desarrollar el proyecto. 
-Estrategia iterativa:
-1- Le pedimos al chat utilizando como contexto e punto 1 que vaya generando documentacion que respete las definiciones dadas en el punto 1.
-2-Revisar lo generado y agregar limitaciones al contenido generado. Si algo no esta dentro del scope aclarar que no corresponde, no borrarlo sino aclararlo dentro de la propia documentacion. Esto es para luego si ese feature o funcionalidad es necesaria ya esta redactada y podemos utilizarla. Esto limita las proximas iteraciones lo cual evita perder tiempo y scope de los que queremos hacer.
+## Estructura del Proyecto
 
-3-A partir de la documentacion revisada en el punto 2, generar la documentacion de la arquitectura. Definicion de tecnologias de desarrolo e implementacion. Ej. Deploy, base de datos, servidor, lenguajes, frameworks, conectividad,etc. En este paso es importante utilizar mermaid para poder generar graficas de  fluo de la arquitectura general que luego podran ser utuilizadas como parte del contexto.
+La siguiente estructura de directorios facilita la organización de los casos de ejemplo:
 
-4- A partir de aca, le pedimos que genere una documentacion de un plan de desarrollo por etapas. Se puede pedir que genere entregas tempranas, con lo cual podemos subdividir los spinrt del proyecto y estructurarlo en el tiempo.
+```
+/home/javier/Proyectos/MAPPLICS/innovacion.mapplics/
+│
+├── README.md
+├── docs/                # Documentación adicional
+└── examples/            # Casos de ejemplo
+    ├── caso1/           # Ejemplo de caso 1
+    ├── caso2/           # Ejemplo de caso 2
+    └── ...              # Otros casos
+```
 
-5 - A partir de ahora para cada una de las etapas pediremos una guia detellada de tareas para el desarrollador. Esto incluye el setup  local para el desarrollo (ej, como levantar el entorno local, paquetas, etc)
+## Uso
 
-6- 
+Cada subdirectorio dentro de `examples/` corresponde a un caso de ejemplo. Para utilizar o probar un caso, siga estos pasos:
+
+1. Navegue al directorio del caso de ejemplo deseado:
+   ```
+   cd examples/casoX
+   ```
+2. Revise el contenido y la documentación específica de cada caso.
+3. Ejecute los scripts o aplicaciones provistas en cada subdirectorio, siguiendo las instrucciones propias de cada caso.
+
+## Cómo Agregar Nuevos Casos de Ejemplo
+
+1. Crear un nuevo subdirectorio dentro de `examples/` con un nombre descriptivo.
+2. Incluir la documentación necesaria (por ejemplo, un archivo README en el subdirectorio) que describa el caso y las instrucciones de uso.
+3. Añadir los archivos de código y/o recursos complementarios necesarios para la demostración.
+
+## Contribuciones
+
+Si deseas mejorar o agregar nuevos casos de ejemplo, por favor sigue las directrices de contribución y asegúrate de mantener la coherencia en la estructura y documentación.
 
 
 

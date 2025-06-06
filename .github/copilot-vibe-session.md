@@ -44,5 +44,5 @@ Si estás trabajando en una parte específica, menciona cómo se relaciona con e
 - "Si hay múltiples formas de hacerlo, sugiere la más eficiente para producción y explica por qué."*
 
 **Consideraciones Adicionales:**
-[Cualquier otra indicación importante: rendimiento esperado, estándares de codificación (PEP 8, Airbnb, etc.), seguridad (aunque la IA necesita supervisión humana en esto [8]), etc.]
+[Cualquier otra indicación importante: rendimiento esperado, estándares de codificación (PEP 8, Airbnb, etc.), seguridad (aunque la IA necesita supervisión humana en esto ), etc.]
 *Ejemplo: "Asegura que el código sea idempotente si aplica."*

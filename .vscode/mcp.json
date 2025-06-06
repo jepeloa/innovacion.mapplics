@@ -1,0 +1,45 @@
+{
+    "servers": {
+
+        "context7": {
+            "command": "npx",
+            "args": ["-y", "@upstash/context7-mcp"],
+            "env": {
+                "DEFAULT_MINIMUM_TOKENS": "6000"
+            }
+        },
+
+        "azureDevOpsSHELL": {
+            "command": "npx",
+            "args": ["-y", "@tiberriver256/mcp-server-azure-devops"],
+            "env": {
+                "AZURE_DEVOPS_ORG_URL": "https://dev.azure.com/mapplicsdevs",
+                "AZURE_DEVOPS_AUTH_METHOD": "azure-cli",
+                "AZURE_TENANT_ID": "3909188d-2c34-40e3-b4d8-85023830b7d4",
+                //"AZURE_DEVOPS_AUTH_METHOD": "pat",
+                //"AZURE_DEVOPS_PAT": "",
+                "AZURE_DEVOPS_DEFAULT_PROJECT": "",
+            }
+        },
+
+        "mysql-dev": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@benborla29/mcp-server-mysql"
+            ],
+            "env": {
+                "MYSQL_HOST":"127.0.0.1",
+                "MYSQL_PORT":"3306",
+                "MYSQL_USER":"",
+                "MYSQL_PASS":"",
+                "MYSQL_DB":"scm-tiendas-develop",
+                "ALLOW_INSERT_OPERATION":"false",
+                "ALLOW_UPDATE_OPERATION":"false",
+                "ALLOW_DELETE_OPERATION":"false"
+            }
+        },
+    
+    },
+
+}

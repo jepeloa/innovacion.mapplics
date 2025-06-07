@@ -1,0 +1,45 @@
+@model ChoirSubscriptionManager.Shared.Models.Member
+
+@{
+    ViewData["Title"] = "Test - Agregar Nuevo Miembro";
+}
+
+<h1>TEST - Formulario de Miembro</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="FullName">Nombre Completo:</label>
+        <input asp-for="FullName" />
+        <span asp-validation-for="FullName"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" type="email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    
+    <div>
+        <label asp-for="DateOfBirth">Fecha de Nacimiento:</label>
+        <input asp-for="DateOfBirth" type="date" />
+        <span asp-validation-for="DateOfBirth"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Role">Rol:</label>
+        <select asp-for="Role">
+            <option value="Singer">Singer</option>
+            <option value="SectionLeader">Section Leader</option>
+            <option value="ChoirDirector">Choir Director</option>
+        </select>
+        <span asp-validation-for="Role"></span>
+    </div>
+    
+    <div>
+        <input asp-for="IsActive" type="checkbox" checked />
+        <label asp-for="IsActive">Activo</label>
+    </div>
+    
+    <button type="submit">Guardar</button>
+    <a asp-action="Index">Volver</a>
+</form>

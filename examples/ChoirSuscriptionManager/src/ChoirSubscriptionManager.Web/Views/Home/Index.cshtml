@@ -1,0 +1,175 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4">🎵 Bienvenido al Sistema de Gestión del Coro</h1>
+    <p class="lead">Panel de control principal para administrar las suscripciones de los miembros del coro.</p>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-bg-primary mb-3">
+            <div class="card-header">👥 Miembros Totales</div>
+            <div class="card-body">
+                <h2 class="card-title">@ViewBag.TotalMembers</h2>
+                <p class="card-text">@ViewBag.ActiveMembers activos</p>
+                <a asp-controller="Members" asp-action="Index" class="btn btn-light">Ver miembros</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-bg-success mb-3">
+            <div class="card-header">📋 Suscripciones</div>
+            <div class="card-body">
+                <h2 class="card-title">@ViewBag.TotalSubscriptions</h2>
+                <p class="card-text">@ViewBag.ActiveSubscriptions activas</p>
+                <a asp-controller="Subscriptions" asp-action="Index" class="btn btn-light">Ver suscripciones</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-bg-warning mb-3">
+            <div class="card-header">⏳ Pagos Pendientes</div>
+            <div class="card-body">
+                <h2 class="card-title">@ViewBag.PendingPayments</h2>
+                <p class="card-text">De @ViewBag.TotalPayments totales</p>
+                <a asp-controller="Payments" asp-action="Index" class="btn btn-light">Ver pagos</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card text-bg-info mb-3">
+            <div class="card-header">💰 Ingresos del Mes</div>
+            <div class="card-body">
+                <h2 class="card-title">@ViewBag.MonthlyRevenue?.ToString("C")</h2>
+                <p class="card-text">@DateTime.Now.ToString("MMMM yyyy")</p>
+                <a asp-controller="Payments" asp-action="Report" class="btn btn-light">Ver reportes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Alertas y notificaciones *@
+@if (ViewBag.SoonExpiringCount > 0 || ViewBag.PendingPayments > 0)
+{
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="alert alert-warning" role="alert">
+                <h4 class="alert-heading">⚠️ Atención Requerida</h4>
+                <hr>
+                @if (ViewBag.SoonExpiringCount > 0)
+                {
+                    <p class="mb-1">
+                        <strong>@ViewBag.SoonExpiringCount suscripciones</strong> expiran en los próximos 7 días.
+                        <a asp-controller="Subscriptions" asp-action="Expiring" class="alert-link">Ver detalles</a>
+                    </p>
+                }
+                @if (ViewBag.PendingPayments > 0)
+                {
+                    <p class="mb-0">
+                        <strong>@ViewBag.PendingPayments pagos pendientes</strong> requieren procesamiento.
+                        <a asp-controller="Payments" asp-action="Index" class="alert-link">Procesar pagos</a>
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>🚀 Acciones Rápidas</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group list-group-flush">
+                    <a asp-controller="Members" asp-action="Create" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">👤 Agregar nuevo miembro</h6>
+                            <small class="text-success">Nuevo</small>
+                        </div>
+                        <p class="mb-1">Registrar un nuevo miembro en el sistema</p>
+                    </a>
+                    <a asp-controller="Subscriptions" asp-action="Create" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">� Nueva suscripción</h6>
+                            <small class="text-primary">Suscripciones</small>
+                        </div>
+                        <p class="mb-1">Crear una nueva suscripción para un miembro</p>
+                    </a>
+                    <a asp-controller="Payments" asp-action="Create" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">💳 Registrar pago</h6>
+                            <small class="text-warning">@ViewBag.PendingPayments pendientes</small>
+                        </div>
+                        <p class="mb-1">Registrar un nuevo pago en el sistema</p>
+                    </a>
+                    <a asp-controller="Payments" asp-action="Report" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">📊 Generar reporte</h6>
+                            <small class="text-info">Informes</small>
+                        </div>
+                        <p class="mb-1">Crear reportes de suscripciones y pagos</p>
+                    </a>
+                    <a asp-controller="Subscriptions" asp-action="Expiring" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">⏰ Suscripciones por expirar</h6>
+                            <small class="text-danger">@ViewBag.SoonExpiringCount próximas</small>
+                        </div>
+                        <p class="mb-1">Revisar suscripciones que expiran pronto</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>📊 Resumen del Sistema</h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-6 mb-3">
+                        <div class="border rounded p-3">
+                            <h4 class="text-primary">@ViewBag.TotalMembers</h4>
+                            <small class="text-muted">Total Miembros</small>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="border rounded p-3">
+                            <h4 class="text-success">@ViewBag.ActiveMembers</h4>
+                            <small class="text-muted">Miembros Activos</small>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="border rounded p-3">
+                            <h4 class="text-warning">@ViewBag.PendingSubscriptions</h4>
+                            <small class="text-muted">Suscripciones Pendientes</small>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="border rounded p-3">
+                            <h4 class="text-info">€@ViewBag.MonthlyRevenue</h4>
+                            <small class="text-muted">Ingresos del Mes</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h6>🟢 Estado del Sistema</h6>
+                    <ul class="mb-0">
+                        <li>Base de datos: ✅ Conectada</li>
+                        <li>Última actualización: @DateTime.Now.ToString("dd/MM/yyyy HH:mm")</li>
+                        <li>Servidor: ✅ Funcionando correctamente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

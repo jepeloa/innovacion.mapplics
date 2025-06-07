@@ -1,0 +1,108 @@
+@model ChoirSubscriptionManager.Shared.Models.Member
+
+@{
+    ViewData["Title"] = "Detalles del Miembro";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-user"></i> Detalles del Miembro
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-4">ID:</dt>
+                                <dd class="col-sm-8">@Model.Id</dd>
+
+                                <dt class="col-sm-4">Nombre Completo:</dt>
+                                <dd class="col-sm-8">@Model.FullName</dd>
+
+                                <dt class="col-sm-4">Email:</dt>
+                                <dd class="col-sm-8">@Model.Email</dd>
+
+                                <dt class="col-sm-4">Teléfono:</dt>
+                                <dd class="col-sm-8">@(string.IsNullOrEmpty(Model.Phone) ? "No especificado" : Model.Phone)</dd>
+
+                                <dt class="col-sm-4">Rol:</dt>
+                                <dd class="col-sm-8">
+                                    <span class="badge badge-primary">@Model.Role</span>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <dl class="row">
+                                <dt class="col-sm-4">Estado:</dt>
+                                <dd class="col-sm-8">
+                                    @if (Model.IsActive)
+                                    {
+                                        <span class="badge badge-success">Activo</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-secondary">Inactivo</span>
+                                    }
+                                </dd>
+
+                                <dt class="col-sm-4">Fecha de Registro:</dt>
+                                <dd class="col-sm-8">@Model.CreatedAt.ToString("dd/MM/yyyy HH:mm")</dd>
+
+                                <dt class="col-sm-4">Última Actualización:</dt>
+                                <dd class="col-sm-8">@Model.UpdatedAt.ToString("dd/MM/yyyy HH:mm")</dd>
+
+                                <dt class="col-sm-4">Fecha de Nacimiento:</dt>
+                                <dd class="col-sm-8">@Model.DateOfBirth.ToString("dd/MM/yyyy")</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-tools"></i> Acciones
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="@Url.Action("Edit", new { id = Model.Id })" class="btn btn-warning">
+                            <i class="fas fa-edit"></i> Editar
+                        </a>
+                        
+                        @if (Model.IsActive)
+                        {
+                            <a href="@Url.Action("Deactivate", new { id = Model.Id })" 
+                               class="btn btn-outline-secondary"
+                               onclick="return confirm('¿Está seguro de que desea desactivar este miembro?')">
+                                <i class="fas fa-user-times"></i> Desactivar
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Activate", new { id = Model.Id })" 
+                               class="btn btn-outline-success"
+                               onclick="return confirm('¿Está seguro de que desea activar este miembro?')">
+                                <i class="fas fa-user-check"></i> Activar
+                            </a>
+                        }
+                        
+                        <a href="@Url.Action("Delete", new { id = Model.Id })" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </a>
+                        
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Volver a la Lista
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

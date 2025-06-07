@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test - Crear Miembro</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-bottom: 5px; }
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Test - Crear Nuevo Miembro</h1>
+    
+    <form action="/Members/Create" method="post">
+        <div class="form-group">
+            <label for="FullName">Nombre Completo:</label>
+            <input type="text" id="FullName" name="FullName" required />
+        </div>
+        
+        <div class="form-group">
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required />
+        </div>
+        
+        <div class="form-group">
+            <label for="Phone">Teléfono:</label>
+            <input type="text" id="Phone" name="Phone" />
+        </div>
+        
+        <div class="form-group">
+            <label for="DateOfBirth">Fecha de Nacimiento:</label>
+            <input type="date" id="DateOfBirth" name="DateOfBirth" required />
+        </div>
+        
+        <div class="form-group">
+            <label for="Role">Rol:</label>
+            <select id="Role" name="Role" required>
+                <option value="">Seleccione un rol...</option>
+                <option value="Singer">Singer</option>
+                <option value="SectionLeader">SectionLeader</option>
+                <option value="ChoirDirector">ChoirDirector</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="JoinDate">Fecha de Ingreso:</label>
+            <input type="date" id="JoinDate" name="JoinDate" required />
+        </div>
+        
+        <div class="form-group">
+            <input type="checkbox" id="IsActive" name="IsActive" value="true" checked />
+            <label for="IsActive">Miembro Activo</label>
+        </div>
+        
+        <button type="submit">Guardar Miembro</button>
+        <a href="/Members">Volver a la Lista</a>
+    </form>
+</body>
+</html>

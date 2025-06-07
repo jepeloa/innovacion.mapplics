@@ -1,0 +1,135 @@
+@model ChoirSubscriptionManager.Shared.Models.Payment
+
+@{
+    ViewData["Title"] = "Eliminar Pago";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4><i class="fas fa-trash"></i> @ViewData["Title"]</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger">
+                    <h5 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> ¡Atención!</h5>
+                    <p>Estás a punto de eliminar permanentemente este pago. Esta acción no se puede deshacer.</p>
+                    <hr>
+                    <p class="mb-0">¿Estás seguro de que deseas proceder?</p>
+                </div>
+
+                <!-- Detalles del pago a eliminar -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="text-muted">Detalles del Pago</h6>
+                        <dl class="row">
+                            <dt class="col-sm-4">ID:</dt>
+                            <dd class="col-sm-8"><strong>#@Model.Id</strong></dd>
+                            
+                            <dt class="col-sm-4">Fecha:</dt>
+                            <dd class="col-sm-8">@Model.PaymentDate.ToString("dd/MM/yyyy HH:mm")</dd>
+                            
+                            <dt class="col-sm-4">Monto:</dt>
+                            <dd class="col-sm-8">
+                                <strong class="text-success">€@Model.Amount.ToString("F2")</strong>
+                            </dd>
+                            
+                            <dt class="col-sm-4">Estado:</dt>
+                            <dd class="col-sm-8">
+                                @switch (Model.Status.ToString())
+                                {
+                                    case "Completed":
+                                        <span class="badge bg-success"><i class="fas fa-check-circle"></i> Completado</span>
+                                        break;
+                                    case "Pending":
+                                        <span class="badge bg-warning"><i class="fas fa-clock"></i> Pendiente</span>
+                                        break;
+                                    case "Failed":
+                                        <span class="badge bg-danger"><i class="fas fa-times-circle"></i> Fallido</span>
+                                        break;
+                                    default:
+                                        <span class="badge bg-secondary">@Model.Status</span>
+                                        break;
+                                }
+                            </dd>
+                            
+                            <dt class="col-sm-4">Método:</dt>
+                            <dd class="col-sm-8">
+                                <span class="badge bg-info">@Model.Method</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h6 class="text-muted">Información del Miembro</h6>
+                        @if (Model.Subscription?.Member != null)
+                        {
+                            <dl class="row">
+                                <dt class="col-sm-4">Nombre:</dt>
+                                <dd class="col-sm-8">
+                                    <strong>@Model.Subscription.Member.FullName</strong>
+                                </dd>
+                                
+                                <dt class="col-sm-4">Email:</dt>
+                                <dd class="col-sm-8">@Model.Subscription.Member.Email</dd>
+                                
+                                <dt class="col-sm-4">Suscripción:</dt>
+                                <dd class="col-sm-8">
+                                    <span class="badge bg-info">@Model.Subscription.Type</span>
+                                </dd>
+                            </dl>
+                        }
+                    </div>
+                </div>
+
+                @if (!string.IsNullOrEmpty(Model.ReferenceNumber))
+                {
+                    <hr class="my-3">
+                    <h6 class="text-muted">Referencia del Pago</h6>
+                    <p><code>@Model.ReferenceNumber</code></p>
+                }
+
+                @if (!string.IsNullOrEmpty(Model.Notes))
+                {
+                    <hr class="my-3">
+                    <h6 class="text-muted">Notas</h6>
+                    <div class="alert alert-info">
+                        <p class="mb-0">@Model.Notes</p>
+                    </div>
+                }
+
+                <hr class="my-4">
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary me-md-2">
+                            <i class="fas fa-arrow-left"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Confirmar Eliminación
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Información adicional sobre la eliminación -->
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card border-warning">
+            <div class="card-body">
+                <h6 class="card-title text-warning"><i class="fas fa-info-circle"></i> Consideraciones importantes:</h6>
+                <ul class="card-text">
+                    <li><strong>Irreversible:</strong> Una vez eliminado, el pago no podrá ser recuperado</li>
+                    <li><strong>Reportes:</strong> Esta acción afectará los reportes financieros del coro</li>
+                    <li><strong>Auditoría:</strong> Se recomienda mantener una copia de seguridad antes de eliminar</li>
+                    <li><strong>Alternativa:</strong> Considera cambiar el estado a "Fallido" en lugar de eliminar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

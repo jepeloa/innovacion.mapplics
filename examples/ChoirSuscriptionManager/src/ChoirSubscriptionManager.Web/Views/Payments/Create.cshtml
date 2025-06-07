@@ -1,0 +1,139 @@
+@model ChoirSubscriptionManager.Shared.Models.Payment
+
+@{
+    ViewData["Title"] = "Registrar Nuevo Pago";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="fas fa-plus-circle"></i> @ViewData["Title"]</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="SubscriptionId" class="form-label">
+                                    <i class="fas fa-calendar-alt"></i> Suscripción
+                                </label>
+                                <select asp-for="SubscriptionId" class="form-select" asp-items="ViewBag.SubscriptionList">
+                                    <option value="">-- Seleccionar Suscripción --</option>
+                                </select>
+                                <span asp-validation-for="SubscriptionId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="Amount" class="form-label">
+                                    <i class="fas fa-euro-sign"></i> Monto
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">€</span>
+                                    <input asp-for="Amount" class="form-control" type="number" step="0.01" min="0" />
+                                </div>
+                                <span asp-validation-for="Amount" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="PaymentDate" class="form-label">
+                                    <i class="fas fa-calendar"></i> Fecha de Pago
+                                </label>
+                                <input asp-for="PaymentDate" class="form-control" type="date" />
+                                <span asp-validation-for="PaymentDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="Method" class="form-label">
+                                    <i class="fas fa-credit-card"></i> Método de Pago
+                                </label>
+                                <select asp-for="Method" class="form-select" asp-items="ViewBag.PaymentMethods">
+                                    <option value="">-- Seleccionar Método --</option>
+                                </select>
+                                <span asp-validation-for="Method" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="Status" class="form-label">
+                                    <i class="fas fa-check-circle"></i> Estado del Pago
+                                </label>
+                                <select asp-for="Status" class="form-select" asp-items="ViewBag.PaymentStatuses">
+                                    <option value="">-- Seleccionar Estado --</option>
+                                </select>
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label asp-for="ReferenceNumber" class="form-label">
+                                    <i class="fas fa-hashtag"></i> Referencia (Opcional)
+                                </label>
+                                <input asp-for="ReferenceNumber" class="form-control" placeholder="Número de transacción, recibo, etc." />
+                                <span asp-validation-for="ReferenceNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Notes" class="form-label">
+                            <i class="fas fa-sticky-note"></i> Notas (Opcional)
+                        </label>
+                        <textarea asp-for="Notes" class="form-control" rows="3" 
+                                  placeholder="Información adicional sobre el pago..."></textarea>
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a asp-action="Index" class="btn btn-secondary me-md-2">
+                            <i class="fas fa-times"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Registrar Pago
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Info adicional -->
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="alert alert-info">
+            <h6><i class="fas fa-info-circle"></i> Información sobre el registro de pagos:</h6>
+            <ul class="mb-0">
+                <li><strong>Suscripción:</strong> Selecciona la suscripción a la que corresponde este pago</li>
+                <li><strong>Monto:</strong> Introduce el importe exacto recibido</li>
+                <li><strong>Método:</strong> Especifica cómo se realizó el pago (efectivo, transferencia, etc.)</li>
+                <li><strong>Estado:</strong> Marca como "Completado" si ya se confirmó la recepción del pago</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>
+        // Auto-completar fecha actual si está vacía
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.querySelector('input[type="date"]');
+            if (dateInput && !dateInput.value) {
+                const today = new Date();
+                const formattedDate = today.toISOString().split('T')[0];
+                dateInput.value = formattedDate;
+            }
+        });
+    </script>
+}

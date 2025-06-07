@@ -1,0 +1,94 @@
+@model ChoirSubscriptionManager.Shared.Models.Member
+
+@{
+    ViewData["Title"] = "Agregar Nuevo Miembro";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">👤 Agregar Nuevo Miembro</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="FullName" class="form-label">Nombre Completo *</label>
+                            <input asp-for="FullName" class="form-control" placeholder="Ej: María González" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Email" class="form-label">Email *</label>
+                            <input asp-for="Email" type="email" class="form-control" placeholder="ejemplo@email.com" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Phone" class="form-label">Teléfono</label>
+                            <input asp-for="Phone" class="form-control" placeholder="+34 600 123 456" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="DateOfBirth" class="form-label">Fecha de Nacimiento *</label>
+                            <input asp-for="DateOfBirth" type="date" class="form-control" />
+                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Role" class="form-label">Rol en el Coro *</label>
+                            <select asp-for="Role" class="form-select">
+                                <option value="">Seleccione un rol...</option>
+                                @if (ViewBag.Roles != null)
+                                {
+                                    @foreach (var role in (ViewBag.Roles as IEnumerable<ChoirSubscriptionManager.Shared.Enums.MemberRole>) ?? new List<ChoirSubscriptionManager.Shared.Enums.MemberRole>())
+                                    {
+                                        <option value="@role">@role</option>
+                                    }
+                                }
+                            </select>
+                            <span asp-validation-for="Role" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="JoinDate" class="form-label">Fecha de Ingreso *</label>
+                            <input asp-for="JoinDate" type="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            <span asp-validation-for="JoinDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input asp-for="IsActive" class="form-check-input" type="checkbox" checked />
+                            <label asp-for="IsActive" class="form-check-label">
+                                Miembro activo
+                            </label>
+                        </div>
+                        <small class="form-text text-muted">Los miembros inactivos no aparecerán en las listas principales.</small>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Volver a la Lista
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-save"></i> Guardar Miembro
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

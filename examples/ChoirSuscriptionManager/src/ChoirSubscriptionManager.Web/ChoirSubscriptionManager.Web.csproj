@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChoirSubscriptionManager.Core\ChoirSubscriptionManager.Core.csproj" />
+    <ProjectReference Include="..\ChoirSubscriptionManager.Data\ChoirSubscriptionManager.Data.csproj" />
+    <ProjectReference Include="..\ChoirSubscriptionManager.Shared\ChoirSubscriptionManager.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

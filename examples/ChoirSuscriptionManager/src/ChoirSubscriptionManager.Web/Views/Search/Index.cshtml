@@ -1,0 +1,198 @@
+@{
+    ViewData["Title"] = "Búsqueda Avanzada";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2><i class="fas fa-search text-primary"></i> Búsqueda Avanzada</h2>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+                    <i class="fas fa-home"></i> Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pestañas de Búsqueda -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="searchTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="members-tab" data-bs-toggle="tab" data-bs-target="#members" type="button" role="tab">
+                                <i class="fas fa-users"></i> Miembros
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="subscriptions-tab" data-bs-toggle="tab" data-bs-target="#subscriptions" type="button" role="tab">
+                                <i class="fas fa-calendar-check"></i> Suscripciones
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="payments-tab" data-bs-toggle="tab" data-bs-target="#payments" type="button" role="tab">
+                                <i class="fas fa-credit-card"></i> Pagos
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body">
+                    <div class="tab-content" id="searchTabsContent">
+                        <!-- Búsqueda de Miembros -->
+                        <div class="tab-pane fade show active" id="members" role="tabpanel">
+                            <h5 class="mb-3"><i class="fas fa-filter"></i> Buscar Miembros</h5>
+                            <form asp-action="Members" method="post">
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Término de Búsqueda</label>
+                                        <input type="text" name="searchTerm" class="form-control" placeholder="Nombre, email o teléfono...">
+                                        <small class="text-muted">Busca en nombre, email y teléfono</small>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label">Rol en el Coro</label>
+                                        <select name="role" class="form-select">
+                                            <option value="">Todos los roles</option>
+                                            <option value="Soprano">Soprano</option>
+                                            <option value="Alto">Alto</option>
+                                            <option value="Tenor">Tenor</option>
+                                            <option value="Bass">Bass</option>
+                                            <option value="Director">Director</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label">Estado</label>
+                                        <select name="isActive" class="form-select">
+                                            <option value="">Todos</option>
+                                            <option value="true">Activos</option>
+                                            <option value="false">Inactivos</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-3 d-flex align-items-end">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="fas fa-search"></i> Buscar
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Búsqueda de Suscripciones -->
+                        <div class="tab-pane fade" id="subscriptions" role="tabpanel">
+                            <h5 class="mb-3"><i class="fas fa-filter"></i> Buscar Suscripciones</h5>
+                            <form asp-action="Subscriptions" method="post">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label">Nombre del Miembro</label>
+                                        <input type="text" name="memberName" class="form-control" placeholder="Nombre del miembro...">
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label class="form-label">Tipo</label>
+                                        <select name="type" class="form-select">
+                                            <option value="">Todos</option>
+                                            <option value="Monthly">Mensual</option>
+                                            <option value="Quarterly">Trimestral</option>
+                                            <option value="Annual">Anual</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label class="form-label">Estado</label>
+                                        <select name="status" class="form-select">
+                                            <option value="">Todos</option>
+                                            <option value="Active">Activa</option>
+                                            <option value="Expired">Vencida</option>
+                                            <option value="Cancelled">Cancelada</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label class="form-label">Fecha Inicio</label>
+                                        <input type="date" name="startDate" class="form-control">
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label class="form-label">Fecha Fin</label>
+                                        <input type="date" name="endDate" class="form-control">
+                                    </div>
+                                    <div class="col-md-1 mb-3 d-flex align-items-end">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Búsqueda de Pagos -->
+                        <div class="tab-pane fade" id="payments" role="tabpanel">
+                            <h5 class="mb-3"><i class="fas fa-filter"></i> Buscar Pagos</h5>
+                            <form asp-action="Payments" method="post">
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label">Nombre del Miembro</label>
+                                        <input type="text" name="memberName" class="form-control" placeholder="Nombre del miembro...">
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label class="form-label">Estado</label>
+                                        <select name="status" class="form-select">
+                                            <option value="">Todos</option>
+                                            <option value="Pending">Pendiente</option>
+                                            <option value="Completed">Completado</option>
+                                            <option value="Failed">Fallido</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label class="form-label">Método</label>
+                                        <select name="method" class="form-select">
+                                            <option value="">Todos</option>
+                                            <option value="Cash">Efectivo</option>
+                                            <option value="CreditCard">Tarjeta</option>
+                                            <option value="BankTransfer">Transferencia</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label class="form-label">Desde</label>
+                                        <input type="date" name="fromDate" class="form-control">
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label class="form-label">Hasta</label>
+                                        <input type="date" name="toDate" class="form-control">
+                                    </div>
+                                    <div class="col-md-1 mb-3 d-flex align-items-end">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label">Monto Mínimo</label>
+                                        <input type="number" name="minAmount" class="form-control" step="0.01" min="0" placeholder="0.00">
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-label">Monto Máximo</label>
+                                        <input type="number" name="maxAmount" class="form-control" step="0.01" min="0" placeholder="1000.00">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Información Adicional -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="alert alert-info">
+                <h6><i class="fas fa-lightbulb"></i> Consejos de Búsqueda:</h6>
+                <ul class="mb-0">
+                    <li><strong>Búsqueda de texto:</strong> No distingue entre mayúsculas y minúsculas</li>
+                    <li><strong>Filtros múltiples:</strong> Puedes combinar varios filtros para afinar los resultados</li>
+                    <li><strong>Fechas:</strong> Usa el formato de fecha del navegador o selecciona desde el calendario</li>
+                    <li><strong>Montos:</strong> Puedes buscar rangos de precios usando los campos mínimo y máximo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

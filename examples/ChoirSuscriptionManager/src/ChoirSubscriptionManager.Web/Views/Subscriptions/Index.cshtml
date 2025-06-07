@@ -1,0 +1,223 @@
+@model IEnumerable<ChoirSubscriptionManager.Shared.Models.Subscription>
+
+@{
+    ViewData["Title"] = "Gestión de Suscripciones";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>@ViewData["Title"]</h2>
+            <div>
+                <a href="@Url.Action("Create")" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Nueva Suscripción
+                </a>
+                <a href="@Url.Action("Expiring")" class="btn btn-warning">
+                    <i class="fas fa-exclamation-triangle"></i> Por Expirar
+                </a>
+            </div>
+        </div>
+
+        @* Mostrar mensaje de éxito si existe *@
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show">
+                @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
+        @* Filtros rápidos *@
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="form-label">Filtrar por estado:</label>
+                        <select class="form-select" id="statusFilter">
+                            <option value="">Todos los estados</option>
+                            <option value="Active">Activas</option>
+                            <option value="Expired">Expiradas</option>
+                            <option value="Suspended">Suspendidas</option>
+                            <option value="Cancelled">Canceladas</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Filtrar por tipo:</label>
+                        <select class="form-select" id="typeFilter">
+                            <option value="">Todos los tipos</option>
+                            <option value="Monthly">Mensual</option>
+                            <option value="Quarterly">Trimestral</option>
+                            <option value="Yearly">Anual</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button type="button" class="btn btn-outline-secondary" onclick="clearFilters()">
+                            <i class="fas fa-times"></i> Limpiar Filtros
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Tabla de suscripciones *@
+        <div class="card">
+            <div class="card-body">
+                @if (Model.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover" id="subscriptionsTable">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Miembro</th>
+                                    <th>Tipo</th>
+                                    <th>Estado</th>
+                                    <th>Fecha Inicio</th>
+                                    <th>Fecha Fin</th>
+                                    <th>Monto</th>
+                                    <th>Días Restantes</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var subscription in Model)
+                                {
+                                    var daysRemaining = (subscription.EndDate - DateTime.Now).Days;
+                                    var statusClass = subscription.Status switch
+                                    {
+                                        ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Active => "success",
+                                        ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Expired => "danger",
+                                        ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Suspended => "warning",
+                                        ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Cancelled => "secondary",
+                                        _ => "primary"
+                                    };
+                                    
+                                    <tr data-status="@subscription.Status" data-type="@subscription.Type">
+                                        <td>
+                                            <div>
+                                                <strong>@subscription.Member?.FullName</strong>
+                                                <br>
+                                                <small class="text-muted">@subscription.Member?.Email</small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-info">
+                                                @subscription.Type switch
+                                                {
+                                                    ChoirSubscriptionManager.Shared.Enums.SubscriptionType.Monthly => "Mensual",
+                                                    ChoirSubscriptionManager.Shared.Enums.SubscriptionType.Quarterly => "Trimestral",
+                                                    ChoirSubscriptionManager.Shared.Enums.SubscriptionType.Yearly => "Anual",
+                                                    _ => subscription.Type.ToString()
+                                                }
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-@statusClass">
+                                                @subscription.Status switch
+                                                {
+                                                    ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Active => "Activa",
+                                                    ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Expired => "Expirada",
+                                                    ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Suspended => "Suspendida",
+                                                    ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Cancelled => "Cancelada",
+                                                    _ => subscription.Status.ToString()
+                                                }
+                                            </span>
+                                        </td>
+                                        <td>@subscription.StartDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@subscription.EndDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@subscription.Amount.ToString("C")</td>
+                                        <td>
+                                            @if (subscription.Status == ChoirSubscriptionManager.Shared.Enums.SubscriptionStatus.Active)
+                                            {
+                                                if (daysRemaining > 7)
+                                                {
+                                                    <span class="badge bg-success">@daysRemaining días</span>
+                                                }
+                                                else if (daysRemaining > 0)
+                                                {
+                                                    <span class="badge bg-warning">@daysRemaining días</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-danger">Expirada</span>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <span class="text-muted">-</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <a href="@Url.Action("Details", new { id = subscription.Id })" 
+                                                   class="btn btn-sm btn-outline-info" title="Ver detalles">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="@Url.Action("Edit", new { id = subscription.Id })" 
+                                                   class="btn btn-sm btn-outline-primary" title="Editar">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                                <a href="@Url.Action("Delete", new { id = subscription.Id })" 
+                                                   class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="text-center py-5">
+                        <i class="fas fa-calendar-times fa-3x text-muted mb-3"></i>
+                        <h4>No hay suscripciones registradas</h4>
+                        <p class="text-muted">Comienza creando la primera suscripción para el coro.</p>
+                        <a href="@Url.Action("Create")" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Crear Primera Suscripción
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Función para filtrar la tabla
+        function filterTable() {
+            const statusFilter = document.getElementById('statusFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            const rows = document.querySelectorAll('#subscriptionsTable tbody tr');
+
+            rows.forEach(row => {
+                const status = row.getAttribute('data-status');
+                const type = row.getAttribute('data-type');
+                
+                const statusMatch = !statusFilter || status === statusFilter;
+                const typeMatch = !typeFilter || type === typeFilter;
+                
+                if (statusMatch && typeMatch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Función para limpiar filtros
+        function clearFilters() {
+            document.getElementById('statusFilter').value = '';
+            document.getElementById('typeFilter').value = '';
+            filterTable();
+        }
+
+        // Agregar event listeners a los filtros
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('statusFilter').addEventListener('change', filterTable);
+            document.getElementById('typeFilter').addEventListener('change', filterTable);
+        });
+    </script>
+}

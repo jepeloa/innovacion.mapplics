@@ -1,0 +1,156 @@
+@model ChoirSubscriptionManager.Shared.Models.Subscription
+
+@{
+    ViewData["Title"] = "Nueva Suscripción";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">@ViewData["Title"]</h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                    
+                    @* Información del miembro *@
+                    <div class="form-group mb-3">
+                        <label asp-for="MemberId" class="form-label">Miembro *</label>
+                        <select asp-for="MemberId" class="form-select" asp-items="ViewBag.MemberList">
+                            <option value="">Seleccione un miembro...</option>
+                        </select>
+                        <span asp-validation-for="MemberId" class="text-danger"></span>
+                        <div class="form-text">Seleccione el miembro al cual pertenecerá esta suscripción.</div>
+                    </div>
+
+                    @* Tipo de suscripción *@
+                    <div class="form-group mb-3">
+                        <label asp-for="Type" class="form-label">Tipo de Suscripción *</label>
+                        <select asp-for="Type" class="form-select" asp-items="ViewBag.SubscriptionTypes" id="subscriptionType">
+                            <option value="">Seleccione un tipo...</option>
+                        </select>
+                        <span asp-validation-for="Type" class="text-danger"></span>
+                        <div class="form-text">
+                            <ul class="mb-0">
+                                <li><strong>Mensual:</strong> Válida por 1 mes</li>
+                                <li><strong>Trimestral:</strong> Válida por 3 meses</li>
+                                <li><strong>Anual:</strong> Válida por 1 año</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    @* Fecha de inicio *@
+                    <div class="form-group mb-3">
+                        <label asp-for="StartDate" class="form-label">Fecha de Inicio *</label>
+                        <input asp-for="StartDate" class="form-control" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" id="startDate" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                        <div class="form-text">La fecha de fin se calculará automáticamente según el tipo de suscripción.</div>
+                    </div>
+
+                    @* Fecha de fin (solo lectura) *@
+                    <div class="form-group mb-3">
+                        <label class="form-label">Fecha de Fin (calculada automáticamente)</label>
+                        <input type="text" class="form-control" id="endDate" readonly placeholder="Seleccione un tipo y fecha de inicio" />
+                        <div class="form-text">Esta fecha se actualiza automáticamente según el tipo de suscripción seleccionado.</div>
+                    </div>
+
+                    @* Monto *@
+                    <div class="form-group mb-3">
+                        <label asp-for="Amount" class="form-label">Monto *</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input asp-for="Amount" class="form-control" type="number" step="0.01" min="0" placeholder="0.00" />
+                        </div>
+                        <span asp-validation-for="Amount" class="text-danger"></span>
+                        <div class="form-text">Ingrese el monto de la suscripción en formato decimal (ej: 50.00).</div>
+                    </div>
+
+                    @* Estado *@
+                    <div class="form-group mb-3">
+                        <label asp-for="Status" class="form-label">Estado *</label>
+                        <select asp-for="Status" class="form-select" asp-items="ViewBag.SubscriptionStatuses">
+                            <option value="">Seleccione un estado...</option>
+                        </select>
+                        <span asp-validation-for="Status" class="text-danger"></span>
+                        <div class="form-text">
+                            <ul class="mb-0">
+                                <li><strong>Activa:</strong> La suscripción está vigente</li>
+                                <li><strong>Expirada:</strong> La suscripción ha vencido</li>
+                                <li><strong>Suspendida:</strong> La suscripción está temporalmente suspendida</li>
+                                <li><strong>Cancelada:</strong> La suscripción fue cancelada</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    @* Notas *@
+                    <div class="form-group mb-4">
+                        <label asp-for="Notes" class="form-label">Notas</label>
+                        <textarea asp-for="Notes" class="form-control" rows="3" placeholder="Ingrese cualquier nota adicional sobre esta suscripción..."></textarea>
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                        <div class="form-text">Campo opcional para agregar observaciones adicionales.</div>
+                    </div>
+
+                    @* Botones *@
+                    <div class="d-flex justify-content-between">
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Volver
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Crear Suscripción
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Función para calcular la fecha de fin
+        function calculateEndDate() {
+            const typeSelect = document.getElementById('subscriptionType');
+            const startDateInput = document.getElementById('startDate');
+            const endDateInput = document.getElementById('endDate');
+            
+            const type = typeSelect.value;
+            const startDate = new Date(startDateInput.value);
+            
+            if (!type || !startDateInput.value) {
+                endDateInput.value = '';
+                return;
+            }
+            
+            let endDate;
+            switch (type) {
+                case 'Monthly':
+                    endDate = new Date(startDate);
+                    endDate.setMonth(endDate.getMonth() + 1);
+                    break;
+                case 'Quarterly':
+                    endDate = new Date(startDate);
+                    endDate.setMonth(endDate.getMonth() + 3);
+                    break;
+                case 'Yearly':
+                    endDate = new Date(startDate);
+                    endDate.setFullYear(endDate.getFullYear() + 1);
+                    break;
+                default:
+                    endDate = new Date(startDate);
+                    endDate.setMonth(endDate.getMonth() + 1);
+            }
+            
+            endDateInput.value = endDate.toLocaleDateString('es-ES');
+        }
+        
+        // Agregar event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('subscriptionType').addEventListener('change', calculateEndDate);
+            document.getElementById('startDate').addEventListener('change', calculateEndDate);
+            
+            // Calcular fecha inicial si ya hay valores
+            calculateEndDate();
+        });
+    </script>
+}

@@ -50,6 +50,18 @@
         }
         .content-section.active {
             display: block;
+        }
+        
+        .use-case-pill.active {
+            background-color: var(--brand-dark-blue) !important;
+            color: white !important;
+        }
+        
+        .use-case-content.hidden {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
             animation: fadeIn 0.5s ease-in-out;
         }
         @keyframes fadeIn {
@@ -69,6 +81,94 @@
             padding: 1rem;
             border-radius: 0.5rem;
             box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+
+        /* Timeline Styles */
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 4rem;
+            z-index: 2;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -42px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            z-index: 3;
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-badge {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-insight {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #f8fafc;
+            border-left: 4px solid #4f46e5;
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: #374151;
+        }
+
+        .fade-in {
+            animation: timelineFadeIn 0.6s ease-out;
+        }
+
+        @keyframes timelineFadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -208,25 +308,272 @@
             </div>
 
              <div id="documentacion" class="content-section">
-                 <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">La Sesión de Documentación</h1>
-                 <p class="text-lg text-gray-600 mb-8">Tratar la documentación como un entregable crítico, no como una idea de último momento.</p>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-4">El Poder de las Sesiones Híbridas</h2>
-                    <p class="mb-6">Se pueden combinar tipos de sesiones para crear un flujo de trabajo integral. Al iniciar un proyecto, una sesión híbrida de **Vibe Coding + Documentación** permite a la IA:</p>
-                    <div class="flex flex-col md:flex-row items-center gap-8 mt-6">
-                        <div class="text-center">
-                            <div class="w-32 h-32 bg-brand-light-blue text-white rounded-full flex items-center justify-center text-sm p-2 shadow-xl">1. Guiar un cuestionario para definir Audiencia, Tono y Estructura</div>
+                 <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">La Sesión de Documentación Especializada</h1>
+                 <p class="text-lg text-gray-600 mb-8">Un flujo estructurado para generar documentación técnica completa y profesional con IA.</p>
+                
+                <!-- Prompt de Activación -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🚀 Activación de la Sesión</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">💬 Prompt de Activación</h3>
+                            <code class="bg-white p-3 rounded block text-sm font-mono text-purple-800 border-l-4 border-purple-500">
+                                Iniciar sesión de documentación
+                            </code>
+                            <p class="text-sm text-gray-600 mt-3">Este comando activa automáticamente el protocolo especializado de documentación técnica.</p>
                         </div>
-                        <div class="text-3xl text-gray-400">→</div>
-                        <div class="text-center">
-                            <div class="w-32 h-32 bg-brand-magenta text-white rounded-full flex items-center justify-center text-sm p-2 shadow-xl">2. Usar ese marco para guiar la generación de código</div>
-                        </div>
-                        <div class="text-3xl text-gray-400">→</div>
-                        <div class="text-center">
-                            <div class="w-32 h-32 bg-brand-dark-blue text-white rounded-full flex items-center justify-center text-sm p-2 shadow-xl">3. Escribir la documentación en tiempo real, alineada con el código</div>
+                        <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🤖 Respuesta de la IA</h3>
+                            <p class="text-sm text-gray-700 mb-2">La IA se transforma en un <strong>Especialista en Documentación Técnica</strong> y inicia un cuestionario estructurado de 7 aspectos clave.</p>
+                            <div class="bg-white p-2 rounded text-xs text-teal-800 border-l-4 border-teal-500">
+                                ✅ Protocolo activado: Documentación técnica profesional
+                            </div>
                         </div>
                     </div>
-                    <p class="text-center font-semibold text-xl mt-8 text-green-700">El resultado: se elimina la deuda técnica documental desde el primer día.</p>
+                </div>
+
+                <!-- Timeline del Flujo -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">📋 Flujo de la Sesión de Documentación</h2>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <!-- Paso 1: Tipo de Documentación -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-purple-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">📚 1. Tipo de Documentación</h3>
+                                    <span class="timeline-badge">Categorización</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                                        <div class="bg-white p-2 rounded text-center">🔄 Procesos</div>
+                                        <div class="bg-white p-2 rounded text-center">🏗️ Diseño/Sistema</div>
+                                        <div class="bg-white p-2 rounded text-center">👥 Historias Usuario</div>
+                                        <div class="bg-white p-2 rounded text-center">📅 Plan Trabajo</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>IA Guía:</strong> "¿Qué tipo de documentación necesitas crear hoy?"
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 2: Audiencia Objetivo -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-blue-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🎯 2. Audiencia Objetivo</h3>
+                                    <span class="timeline-badge">Personalización</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                                        <div class="bg-white p-3 rounded">
+                                            <div class="font-semibold text-blue-800">👨‍💻 Técnica</div>
+                                            <div class="text-xs text-gray-600">Desarrolladores, arquitectos</div>
+                                        </div>
+                                        <div class="bg-white p-3 rounded">
+                                            <div class="font-semibold text-blue-800">🏢 Ejecutiva</div>
+                                            <div class="text-xs text-gray-600">Gerentes, directores</div>
+                                        </div>
+                                        <div class="bg-white p-3 rounded">
+                                            <div class="font-semibold text-blue-800">🎨 Usuario Final</div>
+                                            <div class="text-xs text-gray-600">Clientes, stakeholders</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Adaptación:</strong> El lenguaje y nivel técnico se ajusta automáticamente
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 3: Nivel de Detalle -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-green-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔍 3. Nivel de Detalle</h3>
+                                    <span class="timeline-badge">Profundidad</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-lg mb-3">
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-800">📝 Resumen Ejecutivo</span>
+                                        <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-800">📋 Documentación Estándar</span>
+                                        <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-800">📖 Documentación Completa</span>
+                                        <span class="bg-white px-3 py-1 rounded-full text-sm font-semibold text-green-800">🔬 Análisis Exhaustivo</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Escalabilidad:</strong> Desde overview hasta documentación técnica completa
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 4: Elementos Visuales -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-yellow-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🎨 4. Elementos Visuales</h3>
+                                    <span class="timeline-badge">Diagramas</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                                        <div class="bg-white p-2 rounded text-center">📊 Diagramas</div>
+                                        <div class="bg-white p-2 rounded text-center">🗂️ Mockups</div>
+                                        <div class="bg-white p-2 rounded text-center">📈 Gráficos</div>
+                                        <div class="bg-white p-2 rounded text-center">🔄 Flujos</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Integración:</strong> Automatiza la generación de Mermaid y elementos visuales
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 5: Contexto del Proyecto -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-red-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🏗️ 5. Contexto del Proyecto</h3>
+                                    <span class="timeline-badge">Análisis</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-red-50 to-pink-50 p-4 rounded-lg mb-3">
+                                    <p class="text-sm text-gray-700">La IA analiza automáticamente:</p>
+                                    <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                                        <div class="bg-white p-2 rounded">📁 Estructura del workspace</div>
+                                        <div class="bg-white p-2 rounded">⚙️ Tecnologías detectadas</div>
+                                        <div class="bg-white p-2 rounded">📋 Archivos existentes</div>
+                                        <div class="bg-white p-2 rounded">🔗 Dependencias</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Inteligencia:</strong> Comprende el contexto completo sin intervención manual
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 6: Generación -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-indigo-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">⚡ 6. Generación Inteligente</h3>
+                                    <span class="timeline-badge">Producción</span>
+                                </div>
+                                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <h4 class="font-semibold text-indigo-800 mb-2">📝 Estructura Automática</h4>
+                                            <ul class="text-xs text-gray-600 space-y-1">
+                                                <li>• Índices y tabla de contenidos</li>
+                                                <li>• Secciones profesionales</li>
+                                                <li>• Referencias cruzadas</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-indigo-800 mb-2">🎯 Contenido Inteligente</h4>
+                                            <ul class="text-xs text-gray-600 space-y-1">
+                                                <li>• Adaptado a la audiencia</li>
+                                                <li>• Nivel técnico apropiado</li>
+                                                <li>• Ejemplos contextualizados</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Resultado:</strong> Documentación profesional, completa y lista para usar
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejemplos de Documentación Generada -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">📊 Tipos de Documentación Disponibles</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">🔄 Documentación de Procesos</h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Workflows y procedimientos</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Guías paso a paso</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Políticas y protocolos</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>Estándares de calidad</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">🏗️ Diseño de Aplicación/Sistema</h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Arquitectura de software</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Diagramas técnicos</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Especificaciones API</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>Modelos de datos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">👥 Historias de Usuario y Requerimientos</h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>User stories detalladas</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Criterios de aceptación</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Casos de uso</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>Matriz de trazabilidad</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📅 Plan de Trabajo y Estimaciones</h3>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Planes de proyecto</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Estimaciones de tiempo</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Cronogramas detallados</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>Análisis de riesgos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beneficios Clave -->
+                <div class="bg-gradient-to-r from-blue-900 to-blue-700 p-8 rounded-lg shadow-md text-white" style="background: linear-gradient(to right, var(--brand-dark-blue), var(--brand-medium-blue));">
+                    <h2 class="text-2xl font-bold mb-6">✨ Beneficios de la Sesión de Documentación</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">⚡</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Velocidad</h3>
+                            <p class="text-sm opacity-90">Genera documentación completa en minutos, no días</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">🎯</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Precisión</h3>
+                            <p class="text-sm opacity-90">Adapta automáticamente el contenido a la audiencia objetivo</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl">🔄</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Consistencia</h3>
+                            <p class="text-sm opacity-90">Mantiene estándares profesionales y estructura coherente</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <p class="text-xl font-semibold">La documentación deja de ser una tarea pendiente para convertirse en un activo estratégico</p>
+                    </div>
                 </div>
             </div>
 
@@ -234,82 +581,1289 @@
                 <h1 class="text-4xl font-bold text-brand-dark-blue mb-2">Casos de Uso Reales</h1>
                 <p class="text-lg text-gray-600 mb-8">Explorando sesiones de trabajo reales, paso a paso.</p>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">Caso 1: Diseño de Producto</h2>
-                    <div class="relative pl-10 border-l-4 border-brand-light-blue space-y-16">
-                        <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-brand-magenta text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">1</div>
-                            <h3 class="font-bold text-xl text-brand-magenta mb-2">Punto de Partida: La Idea Vaga</h3>
-                            <div class="flex items-start gap-4"><span class="text-2xl">👤</span><div class="bg-gray-200 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-mono text-sm">"iniciar sesion de vibe coding para generar la documentacion de diseño..."</p></div></div>
-                            <div class="mt-4 pl-12"><div class="border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50"><h4 class="font-bold">Análisis</h4><p class="text-sm">La petición es amplia. La IA debe tomar la iniciativa para estructurar la conversación.</p></div></div>
+                <!-- Pills de Navegación -->
+                <div class="flex flex-wrap gap-2 mb-8 justify-center">
+                    <button onclick="showUseCase('caso1')" id="pill-caso1" class="use-case-pill active bg-brand-dark-blue text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-brand-medium-blue transition-colors">
+                        🎨 Diseño de Producto
+                    </button>
+                    <button onclick="showUseCase('caso2')" id="pill-caso2" class="use-case-pill bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors">
+                        🏗️ Diseño de Estructura
+                    </button>
+                    <button onclick="showUseCase('caso3')" id="pill-caso3" class="use-case-pill bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors">
+                        💻 Implementación
+                    </button>
+                    <button onclick="showUseCase('caso4')" id="pill-caso4" class="use-case-pill bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors">
+                        🐛 Corrección de Bug
+                    </button>
+                    <button onclick="showUseCase('caso5')" id="pill-caso5" class="use-case-pill bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-300 transition-colors">
+                        🧪 Generación Test Cases
+                    </button>
+                </div>
+
+                <!-- Caso 1: Diseño de Producto -->
+                <div id="caso1" class="use-case-content bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">🎨 Caso 1: Diseño de Producto UI/UX</h2>
+                    
+                    <!-- Timeline Interactivo -->
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <!-- Momento 1: Inicio con Prompt Predefinido -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-brand-magenta"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🚀 Inicio: Activación de Sesión Especializada</h3>
+                                    <span class="timeline-badge">Modo UI/UX</span>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🎯 Prompt Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">"sesion de vibe coding para generar la documentacion de diseño de la interfaz de usuario y funcionalidades de una aplicacion"</code>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🤖 Activación IA:</p>
+                                            <p class="text-xs">Detecta modo Vibe Coding UI/UX y activa protocolo de documentación de diseño</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Prompt predefinido estructurado activa automáticamente el modo especializado
+                                </div>
+                            </div>
                         </div>
-                        <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-brand-light-blue text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">2</div>
-                            <h3 class="font-bold text-xl text-brand-light-blue mb-2">Diálogo Guiado: La IA Toma la Iniciativa</h3>
-                            <div class="flex items-start gap-4"><span class="text-2xl">🤖</span><div class="bg-blue-50 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-semibold">¡Perfecto! Te guiaré a través de algunas preguntas...</p></div></div>
-                             <div class="mt-4 pl-12"><div class="border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50"><h4 class="font-bold">Análisis</h4><p class="text-sm">La IA asume el rol de **Product Designer** e inicia un cuestionario para definir el problema y el contexto.</p></div></div>
+
+                        <!-- Momento 2: IA Toma Iniciativa -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-brand-light-blue"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🤖 IA Interroga: Cuestionario Estructurado</h3>
+                                    <span class="timeline-badge">Liderazgo</span>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-800 mb-2">🔍 Interrogatorio IA:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• 1. Rol del Agente (5 opciones)</li>
+                                                <li>• 2. Contexto del Proyecto (3 opciones)</li>
+                                                <li>• 3. Alcance de Documentación (6 opciones)</li>
+                                                <li>• 4. Audiencia Objetivo (6 opciones)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-800 mb-2">🎯 Detección Automática:</p>
+                                            <p class="text-xs">Identifica proyecto "ChoirSubscriptionManager" existente y lo incluye en las opciones</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> La IA asume liderazgo inmediato con cuestionario inteligente y detección contextual
+                                </div>
+                            </div>
                         </div>
-                        <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-brand-orange text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">3</div>
-                            <h3 class="font-bold text-xl text-brand-orange mb-2">Intervención Humana: La Guía Estratégica</h3>
-                            <div class="flex items-start gap-4"><span class="text-2xl">👤</span><div class="bg-gray-200 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-mono text-sm">"...agregar al contexto las siguientes capturas... paleta de colores... manten la aplicacion simple."</p></div></div>
-                             <div class="mt-4 pl-12"><div class="border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50"><h4 class="font-bold">Análisis</h4><p class="text-sm">El usuario aporta un contexto que la IA no podría adivinar: <b>inspiración visual y restricción de alcance</b>. Esto corrige el rumbo.</p></div></div>
+
+                        <!-- Momento 3: Usuario Responde Eficientemente -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-brand-dark-blue"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">💬 Usuario: Configuración Compacta</h3>
+                                    <span class="timeline-badge">Eficiente</span>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-gray-800 mb-2">📝 Respuesta Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">1.2 | 2.1 | 3.1,3.2 | 4.1</code>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-gray-800 mb-2">🔄 Traducción IA:</p>
+                                            <p class="text-xs">Product Designer + ChoirSubscriptionManager + Guía Visual + Flujos + Para Desarrolladores Frontend</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Comunicación ultra-eficiente usando numeración, con traducción automática de la IA
+                                </div>
+                            </div>
                         </div>
-                        <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-green-500 text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">4</div>
-                            <h3 class="font-bold text-xl text-green-700 mb-2">Resultado: Documentación Coherente</h3>
-                             <div class="flex items-start gap-4"><span class="text-2xl">🤖</span><div class="bg-green-50 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-semibold">¡Hecho! He creado y actualizado la documentación...</p></div></div>
+
+                        <!-- Momento 4: IA Explora Autónomamente -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-purple-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">⚡ IA Explora: Trabajo Autónomo</h3>
+                                    <span class="timeline-badge">Proactiva</span>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🔍 Exploración Automática:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Analiza estructura del proyecto</li>
+                                                <li>• Revisa mockups en /design/</li>
+                                                <li>• Configura entorno Python</li>
+                                                <li>• Prepara preguntas adicionales</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🤖 Autonomía IA:</p>
+                                            <p class="text-xs">Toma iniciativa sin instrucciones específicas del usuario para entender el contexto completo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> La IA desarrolla autonomía investigativa, explorando recursos sin ser dirigida
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 5: Intervención Crítica del Usuario -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-brand-orange"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🎯 Intervención: Corrección de Rumbo</h3>
+                                    <span class="timeline-badge">Crítica</span>
+                                </div>
+                                <div class="bg-orange-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-orange-800 mb-2">⚠️ Corrección Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">"Disculpa antes de continuar debo agregar al contexto las siguientes capturas... paleta de colores debe ser predominante el uso de los colores blanco dorado y negro"</code>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-orange-800 mb-2">🔄 Impacto:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Aporta capturas Harmony Hub</li>
+                                                <li>• Define paleta específica</li>
+                                                <li>• Cambia dirección visual</li>
+                                                <li>• Momento oportuno</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Intervención humana oportuna evita trabajo incorrecto, aportando contexto visual crucial
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 6: IA se Adapta Completamente -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-indigo-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔄 IA se Reorienta: Adaptación Total</h3>
+                                    <span class="timeline-badge">Flexible</span>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">✅ Nueva Configuración:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Referencias: Harmony Hub</li>
+                                                <li>• Paleta: Blanco/Dorado/Negro</li>
+                                                <li>• Estilo: Moderno y limpio</li>
+                                                <li>• Funcionalidad: Documentación original</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">🧠 Síntesis IA:</p>
+                                            <p class="text-xs">Combina requerimientos funcionales existentes con nueva inspiración visual de forma coherente</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Adaptación inmediata y completa, manteniendo coherencia entre lo funcional y visual
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 7: Generación Masiva -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-green-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">📁 Generación: Entregables Masivos</h3>
+                                    <span class="timeline-badge">Productiva</span>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-green-800 mb-2">📄 Archivos Generados:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• UI_DESIGN_SYSTEM.md</li>
+                                                <li>• USER_FLOWS.md</li>
+                                                <li>• UI_COMPONENTS.md</li>
+                                                <li>• HARMONY_HUB_INSPIRATION.md</li>
+                                                <li>• README_DESIGN.md</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-green-800 mb-2">🏗️ Características:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Documentación interconectada</li>
+                                                <li>• Consistencia completa</li>
+                                                <li>• Especificaciones técnicas</li>
+                                                <li>• Lista para desarrollo</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Generación masiva de documentación estructurada y coherente en una sola sesión
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback de la IA sobre el proceso -->
+                    <div class="mt-8 bg-gradient-to-r from-pink-500 to-blue-500 p-6 rounded-lg text-white shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">🧠 Análisis del Flujo UI/UX</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-3">✨ Fortalezas del Proceso:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Protocolo especializado:</strong> Modo UI/UX con flujo predefinido</li>
+                                    <li><strong>Liderazgo inmediato:</strong> IA estructura la conversación desde el inicio</li>
+                                    <li><strong>Flexibilidad extrema:</strong> Reorientación completa basada en feedback</li>
+                                    <li><strong>Autonomía investigativa:</strong> Explora contexto sin ser dirigida</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-3">🎯 Elementos Clave del Éxito:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Timing de intervención:</strong> Usuario corrige rumbo en momento crítico</li>
+                                    <li><strong>Comunicación eficiente:</strong> Opciones numeradas aceleran proceso</li>
+                                    <li><strong>Síntesis inteligente:</strong> Combina funcional + visual coherentemente</li>
+                                    <li><strong>Entregables production-ready:</strong> Listos para implementación</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-4 bg-white bg-opacity-20 rounded-lg">
+                            <p class="text-sm">
+                                <strong>Traducción del flujo:</strong> Activación UI/UX + Liderazgo IA + Configuración Eficiente + Autonomía Investigativa + Intervención Oportuna + Adaptación Total + Generación Masiva
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-md mt-12 mb-8">
-                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">Caso 2: Diseño de Estructura y Planificación</h2>
-                    <div class="relative pl-10 border-l-4 border-brand-light-blue space-y-16">
-                         <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-brand-orange text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">3</div>
-                            <h3 class="font-bold text-xl text-brand-orange mb-2">Intervención Humana: Solicitud de Clarificación</h3>
-                            <div class="flex items-start gap-4"><span class="text-2xl">👤</span><div class="bg-gray-200 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-mono text-sm">"No estoy seguro de que respuestas darte por que la terminologia es muy tecnica trata de explicar mejor..."</p></div></div>
-                             <div class="mt-4 pl-12"><div class="border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50"><h4 class="font-bold">Análisis</h4><p class="text-sm">La IA detecta que el usuario no comprende la jerga. **Cambia su rol de 'Arquitecto' a 'Mentor'**, y explica cada opción de forma sencilla.</p></div></div>
+                <!-- Caso 2: Diseño de Estructura -->
+                <div id="caso2" class="use-case-content bg-white p-8 rounded-lg shadow-md mb-8 hidden">
+                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">🏗️ Caso 2: Diseño de Estructura y Planificación</h2>
+                    
+                    <!-- Timeline Interactivo -->
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <!-- Momento 1: Sesión Híbrida -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-purple-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">💡 Inicio: Sesión Híbrida</h3>
+                                    <span class="timeline-badge">Configuración</span>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🎯 Prompt Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">iniciar sesion de vibe code y documentacion</code>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🤖 Respuesta IA:</p>
+                                            <p class="text-xs">Activa sesión híbrida: Vibe Coding + Documentación con preguntas estructuradas</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> La IA reconoce el comando especial y activa un modo híbrido específico
+                                </div>
+                            </div>
                         </div>
-                        <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-green-500 text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">4</div>
-                            <h3 class="font-bold text-xl text-green-700 mb-2">Resultado: Estructura y Planificación Completas</h3>
-                             <div class="flex items-start gap-4"><span class="text-2xl">🤖</span><div class="bg-green-50 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-semibold">¡Entendido! He creado la estructura y documentación: `README.md`, `ARCHITECTURE.md`...</p></div></div>
+
+                        <!-- Momento 2: Interrogatorio Estructurado -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-blue-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🎯 Interrogatorio: Opciones Numeradas</h3>
+                                    <span class="timeline-badge">Estructurado</span>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-800 mb-2">🔍 Interrogatorio IA:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• 1. Rol del Agente (7 opciones)</li>
+                                                <li>• 2. Contexto del Proyecto (7 opciones)</li>
+                                                <li>• 3. Objetivo Principal (6 opciones)</li>
+                                                <li>• 4. Stack Tecnológico (7 opciones)</li>
+                                                <li>• 5. Documentación (6 opciones)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-800 mb-2">📝 Primera Respuesta Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">1.1<br>2.1<br>3.5<br>4.1<br>5.2,5.3</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Método sistematizado con opciones numeradas facilita la comunicación rápida
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 3: Barrera de Comunicación -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-yellow-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">⚠️ Obstáculo: Terminología Técnica</h3>
+                                    <span class="timeline-badge">Adaptación</span>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-yellow-800 mb-2">😕 Feedback Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">"No estoy seguro de que respuestas darte por que la terminologia es muy tecnica"</code>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-yellow-800 mb-2">🔄 Adaptación IA:</p>
+                                            <p class="text-xs">Reformula cada opción con explicaciones claras y ejemplos prácticos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> La IA detecta la barrera comunicacional y adapta su lenguaje automáticamente
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 4: Reconfiguración -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-green-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔧 Reconfiguración: Lenguaje Claro</h3>
+                                    <span class="timeline-badge">Pedagógico</span>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-green-800 mb-2">📚 Nueva Explicación IA:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• "Desarrollador Full Stack" → "Te ayudo con todo: frontend y backend"</li>
+                                                <li>• "Nueva aplicación desde cero" → "Empezar un proyecto completamente nuevo"</li>
+                                                <li>• "Crear arquitectura" → "Diseñar cómo va a estar estructurado tu sistema"</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-green-800 mb-2">✅ Confirmación Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">1.1, 2.1, 3.3, 4.1, 5.2,5.3<br>+ contexto detallado del proyecto</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Cambio de enfoque técnico a pedagógico mejora la comprensión
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 5: Generación Configuración Entorno -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-teal-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">⚙️ Entorno: Configuración Automatizada</h3>
+                                    <span class="timeline-badge">Técnica</span>
+                                </div>
+                                <div class="bg-teal-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-teal-800 mb-2">🔧 Configuración Python:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Detecta entorno automáticamente</li>
+                                                <li>• Configura kernel Python</li>
+                                                <li>• Prepara herramientas de desarrollo</li>
+                                                <li>• Sin intervención del usuario</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-teal-800 mb-2">🎯 Configuración .NET:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Comandos instalación SDK</li>
+                                                <li>• Scripts de configuración</li>
+                                                <li>• Estructura de proyecto</li>
+                                                <li>• Entity Framework setup</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> La IA configura automáticamente múltiples entornos de desarrollo sin solicitud explícita
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 6: Generación Masiva de Documentación -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-indigo-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">📚 Generación: Documentación Arquitectural</h3>
+                                    <span class="timeline-badge">Comprensiva</span>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">📄 Documentos Principales:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• README.md (configuración completa)</li>
+                                                <li>• ARCHITECTURE.md (diseño técnico)</li>
+                                                <li>• DEVELOPMENT_PLAN.md (6-8 semanas)</li>
+                                                <li>• SETUP_GUIDE.md (paso a paso)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">🏗️ Nivel Técnico:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Arquitectura Clean/Onion</li>
+                                                <li>• Patrones Repository + UoW</li>
+                                                <li>• Inyección de dependencias</li>
+                                                <li>• Testing estrategia</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Genera documentación production-ready con arquitectura avanzada para proyecto de aprendizaje
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 7: Configuración de Herramientas -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-amber-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🛠️ Herramientas: Setup Completo</h3>
+                                    <span class="timeline-badge">Operacional</span>
+                                </div>
+                                <div class="bg-amber-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-amber-800 mb-2">⚙️ Automatización:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Scripts de instalación</li>
+                                                <li>• Comandos de desarrollo</li>
+                                                <li>• Configuración base de datos</li>
+                                                <li>• Pipeline de deployment</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-amber-800 mb-2">📋 Guías de Uso:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Comandos para desarrollo</li>
+                                                <li>• Solución de problemas</li>
+                                                <li>• Recursos adicionales</li>
+                                                <li>• Próximos pasos claros</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Convierte configuración técnica compleja en proceso simple y operacional
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback de la IA sobre el proceso -->
+                    <div class="mt-8 bg-gradient-to-r from-blue-500 to-cyan-500 p-6 rounded-lg text-white shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">🧠 Análisis del Flujo de Arquitectura y Planificación</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-3">✨ Fortalezas Detectadas:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Detección de barreras:</strong> IA identifica cuando el usuario no comprende terminología</li>
+                                    <li><strong>Adaptación pedagógica:</strong> Cambia de lenguaje técnico a explicativo</li>
+                                    <li><strong>Generación comprensiva:</strong> Documenta arquitectura completa y planificación</li>
+                                    <li><strong>Automatización de setup:</strong> Configura entornos sin solicitud explícita</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-3">🎯 Elementos Clave del Éxito:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Sesión híbrida:</strong> Combina código y documentación arquitectural</li>
+                                    <li><strong>Feedback continuo:</strong> Usuario expresa dudas y recibe adaptación</li>
+                                    <li><strong>Nivel de aprendizaje:</strong> Documenta para enseñar .NET desde cero</li>
+                                    <li><strong>Entregables operacionales:</strong> Scripts y guías listas para usar</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-4 bg-white bg-opacity-20 rounded-lg">
+                            <p class="text-sm">
+                                <strong>Traducción del flujo:</strong> Comando Híbrido + Interrogatorio Estructurado + Detección de Barrera + Adaptación Pedagógica + Configuración Autónoma + Generación Arquitectural + Setup Operacional
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                 <div class="bg-white p-6 rounded-lg shadow-md mt-12 mb-8">
-                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">Caso 3: Implementación Guiada y Debugging</h2>
-                    <div class="relative pl-10 border-l-4 border-brand-light-blue space-y-16">
-                        <div class="timeline-step">
-                             <div class="absolute w-10 h-10 bg-brand-orange text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">3</div>
-                             <h3 class="font-bold text-xl text-brand-orange mb-2">Problema y Autocorrección de la IA</h3>
-                             <div class="flex items-start gap-4"><span class="text-2xl">🤖</span><div class="bg-red-100 text-red-800 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-semibold">¡Ah! Tienes Manjaro Linux. La instalación es diferente... `pamac install`... ¡Excelente! Ahora veo un error de compilación por la versión de AutoMapper. La corregiré...</p></div></div>
-                             <div class="mt-4 pl-12"><div class="border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50"><h4 class="font-bold">Análisis</h4><p class="text-sm">La IA demuestra una capacidad de resolución de problemas que va más allá de escribir código. Diagnostica y soluciona un error de entorno (OS) y un error de dependencia de paquete.</p></div></div>
+                <!-- Caso 3: Implementación -->
+                <div id="caso3" class="use-case-content bg-white p-8 rounded-lg shadow-md mb-8 hidden">
+                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">💻 Caso 3: Implementación Guiada</h2>
+                    
+                    <!-- Timeline Interactivo -->
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <!-- Momento 1: Inicio con Contexto -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-orange-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🎯 Inicio: Implementación con Contexto</h3>
+                                    <span class="timeline-badge">Contexto Rico</span>
+                                </div>
+                                <div class="bg-orange-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-orange-800 mb-2">📋 Prompt Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">"iniciar sesion de vibe code para implementar [...] la aplicacion estara en la carpeta examples/ChoirSuscriptionManager aqui tienes ya unos archivos con la informacion de contexto"</code>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-orange-800 mb-2">🤖 Detección IA:</p>
+                                            <p class="text-xs">Analiza documentación existente: ARCHITECTURE.md, DEVELOPMENT_PLAN.md, SETUP_GUIDE.md</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> La IA utiliza contexto existente en lugar de empezar desde cero
+                                </div>
+                            </div>
                         </div>
-                        <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-green-500 text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">4</div>
-                            <h3 class="font-bold text-xl text-green-700 mb-2">Resultado: ¡Aplicación Corriendo!</h3>
-                             <div class="flex items-start gap-4"><span class="text-2xl">🤖</span><div class="bg-green-50 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-semibold">¡🎉 INCREÍBLE! ¡Tu aplicación está corriendo! 🎉</p><div class="mt-2 p-2 bg-gray-800 text-white rounded font-mono text-xs">Now listening on: http://localhost:5000</div></div></div>
+
+                        <!-- Momento 2: Interrogatorio Adaptado -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-red-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">📊 Interrogatorio: Análisis de Nivel</h3>
+                                    <span class="timeline-badge">Adaptativo</span>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-red-800 mb-2">🎯 Preguntas IA:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• ¿En qué fase del desarrollo te encuentras?</li>
+                                                <li>• ¿Qué aspecto específico implementar?</li>
+                                                <li>• ¿Cuál es tu nivel de experiencia?</li>
+                                                <li>• ¿Prefieres paso a paso o rápido?</li>
+                                                <li>• ¿Qué funcionalidades son prioritarias?</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-red-800 mb-2">😅 Respuesta Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">3.3- 1 "Menos que principiante ni siquiera leí la documentación del lenguaje"</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Usuario revela nivel muy básico, la IA debe adaptar totalmente su enfoque
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 3: Cambio de Estrategia -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-purple-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔄 Pivote: Modo Tutor Intensivo</h3>
+                                    <span class="timeline-badge">Pedagógico</span>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🧠 Adaptación IA:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• "Imagina que estás construyendo una casa..."</li>
+                                                <li>• Explica conceptos con analogías</li>
+                                                <li>• Divide en pasos micro</li>
+                                                <li>• Explica cada archivo creado</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">📚 Estrategia Nueva:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Crear archivos paso a paso</li>
+                                                <li>• Explicar cada concepto básico</li>
+                                                <li>• Verificar en cada etapa</li>
+                                                <li>• Resolver problemas del entorno</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> La IA cambia de "implementador" a "tutor" basado en las necesidades detectadas
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 4: Implementación Educativa -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-green-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">⚡ Implementación: Código con Explicaciones</h3>
+                                    <span class="timeline-badge">Incremental</span>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-green-800 mb-2">📁 Estructura Creada:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Solución (.sln)</li>
+                                                <li>• 4 proyectos (.csproj)</li>
+                                                <li>• Modelos de dominio</li>
+                                                <li>• Entity Framework</li>
+                                                <li>• Repositorios y servicios</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-green-800 mb-2">🎓 Explicaciones:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• ¿Qué es una arquitectura en capas?</li>
+                                                <li>• ¿Para qué sirve Entity Framework?</li>
+                                                <li>• ¿Qué es un repositorio?</li>
+                                                <li>• Conceptos paso a paso</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Cada línea de código viene acompañada de explicación educativa
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 5: Resolución de Problemas -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-yellow-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔧 Resolución: Problemas del Entorno</h3>
+                                    <span class="timeline-badge">Debugging</span>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-yellow-800 mb-2">⚠️ Problemas Detectados:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• .NET no instalado</li>
+                                                <li>• Sistema Manjaro Linux</li>
+                                                <li>• Incompatibilidad de versiones</li>
+                                                <li>• Errores de compilación</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-yellow-800 mb-2">✅ Soluciones Aplicadas:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Instalación .NET vía pacman</li>
+                                                <li>• Ajuste de versiones en .csproj</li>
+                                                <li>• Corrección de referencias</li>
+                                                <li>• Validaciones paso a paso</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> La IA no solo genera código, sino que resuelve problemas del entorno real
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 6: Iteración Continua -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-indigo-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔄 Iteración: Refinamiento Continuo</h3>
+                                    <span class="timeline-badge">Evolutivo</span>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">🔄 Ciclo Iterativo:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Implementar → Compilar → Corregir</li>
+                                                <li>• Detectar errores automáticamente</li>
+                                                <li>• Refinamiento constante</li>
+                                                <li>• Pruebas en navegador</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">📈 Resultado Final:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Aplicación web funcional</li>
+                                                <li>• CRUD completo implementado</li>
+                                                <li>• Sistema de reportes</li>
+                                                <li>• Interfaz web responsiva</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> El proceso no termina con el código, sino con una aplicación funcionando
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback de la IA sobre el proceso -->
+                    <div class="mt-8 bg-gradient-to-r from-orange-500 to-red-500 p-6 rounded-lg text-white shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">🧠 Análisis del Flujo de Implementación</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-3">🎯 Adaptaciones Clave:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Detección de nivel:</strong> De "implementador" a "tutor" automáticamente</li>
+                                    <li><strong>Explicaciones contextuales:</strong> Cada concepto justificado con analogías</li>
+                                    <li><strong>Resolución de entorno:</strong> No solo código, sino configuración completa</li>
+                                    <li><strong>Iteración educativa:</strong> Compilar → Explicar → Corregir → Aprender</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-3">⚡ Fortalezas Detectadas:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Uso de contexto:</strong> Aprovecha documentación existente</li>
+                                    <li><strong>Adaptabilidad extrema:</strong> Cambia estrategia según necesidades</li>
+                                    <li><strong>Solución integral:</strong> Desde instalación hasta aplicación funcionando</li>
+                                    <li><strong>Persistencia educativa:</strong> No abandona hasta que funciona</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-4 bg-white bg-opacity-20 rounded-lg">
+                            <p class="text-sm">
+                                <strong>Traducción del flujo:</strong> Análisis de Contexto + Detección de Nivel + Pivote Pedagógico + Implementación Educativa + Resolución de Entorno + Iteración hasta Funcionalidad Completa
+                            </p>
                         </div>
                     </div>
                 </div>
-                
-                 <div class="bg-white p-6 rounded-lg shadow-md mt-12">
-                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">Caso 4: Resolución de Bugs con Conexión a Azure DevOps</h2>
-                    <div class="relative pl-10 border-l-4 border-brand-light-blue space-y-16">
-                        <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-brand-light-blue text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">2</div>
-                            <h3 class="font-bold text-xl text-brand-light-blue mb-2">Diagnóstico Asistido: Causa Raíz</h3>
-                            <div class="flex items-start gap-4"><span class="text-2xl">🤖</span><div class="bg-blue-50 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-semibold">¡PROBLEMA ENCONTRADO!</p><p class="text-sm mt-2">La función `confirmSeasonaliyCalculation` está utilizando `::create()`... está intentando crear un registro que **ya existe**.</p><p class="font-semibold mt-4">Solución propuesta: usar `updateOrCreate`.</p></div></div>
-                             <div class="mt-4 pl-12"><div class="border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50"><h4 class="font-bold">Análisis</h4><p class="text-sm">La IA obtiene el contexto del bug desde Azure DevOps (`Duplicate entry`), analiza el código, encuentra la función exacta que causa el problema e identifica la causa raíz, proponiendo la solución idiomática para el framework.</p></div></div>
+
+                <!-- Caso 4: Corrección de Bug -->
+                <div id="caso4" class="use-case-content bg-white p-8 rounded-lg shadow-md mb-8 hidden">
+                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">🐛 Caso 4: Corrección de Bug con Azure DevOps</h2>
+                    
+                    <!-- Timeline Interactivo -->
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <!-- Momento 1: Comando Especializado -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-red-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🚀 Inicio: Comando Especializado Azure DevOps</h3>
+                                    <span class="timeline-badge">Integración</span>
+                                </div>
+                                <div class="bg-red-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-red-800 mb-2">🎯 Prompt Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">iniciar sesion de vibe codig combinada con azure dev ops en sprint 62 para la resolucion del bug id 20085</code>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-red-800 mb-2">🤖 Activación IA:</p>
+                                            <p class="text-xs">Activa sesión híbrida: Vibe Coding + Azure DevOps + contexto específico del bug</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Un solo comando activa múltiples servicios MCP y contexto específico del sprint y bug
+                                </div>
+                            </div>
                         </div>
-                         <div class="timeline-step">
-                            <div class="absolute w-10 h-10 bg-green-500 text-white rounded-full -left-5 mt-1 flex items-center justify-center font-bold text-xl">4</div>
-                            <h3 class="font-bold text-xl text-green-700 mb-2">Resultado: Ciclo Completo de Resolución</h3>
-                             <div class="flex items-start gap-4"><span class="text-2xl">🤖</span><div class="bg-green-50 p-4 rounded-lg rounded-tl-none flex-1"><p class="font-semibold">✅ Tarea Completada: Corrección de Bug 20085</p><ul class="text-sm list-disc list-inside mt-2 pl-4"><li>**Fix implementado** usando `updateOrCreate`.</li><li>**Entorno de testing** configurado y validado.</li><li>**2 tests funcionales** creados para validar el fix.</li><li>**5 archivos de test innecesarios** eliminados.</li></ul></div></div>
+
+                        <!-- Momento 2: Consulta Automática -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-blue-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔍 Autonomía: Consulta Azure DevOps</h3>
+                                    <span class="timeline-badge">Automática</span>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-800 mb-2">🤖 Análisis Automático:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Bug ID 20085 - Active state</li>
+                                                <li>• Priority: 2 (Medium)</li>
+                                                <li>• Asignado: Javier Cruceño</li>
+                                                <li>• Error: Integrity constraint violation</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-800 mb-2">💡 Error Identificado:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">SQLSTATE[23000]: Duplicate entry '35775-66' for key 'monthly_seasonalities.unique'</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Sin solicitud, la IA accede y analiza automáticamente la información del bug en Azure DevOps
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 3: Interrogatorio Técnico -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-yellow-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🎯 Método: Interrogatorio Estructurado</h3>
+                                    <span class="timeline-badge">Técnico</span>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-yellow-800 mb-2">🔍 5 Dimensiones Técnicas:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Rol: Laravel Expert vs Database Architect</li>
+                                                <li>• Contexto: Módulo específico del error</li>
+                                                <li>• Objetivo: Fix inmediato vs refactoring</li>
+                                                <li>• Enfoque: Upsert vs validación previa</li>
+                                                <li>• Base de datos: Análisis de esquema</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-yellow-800 mb-2">✅ Respuesta Eficiente:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">1.1<br>2.1, 2.2<br>3.1, 4<br>4.1<br>5.1,5.2, 5.4</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Configuración en múltiples dimensiones con opciones específicas para resolución de bugs
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 4: Análisis de Base de Datos -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-purple-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🗄️ Investigación: Análisis SQL Automático</h3>
+                                    <span class="timeline-badge">Diagnóstico</span>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🔎 Análisis Automático:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Consulta estructura de tabla</li>
+                                                <li>• Identifica constraint único problemático</li>
+                                                <li>• Examina datos existentes</li>
+                                                <li>• Encuentra registro duplicado exacto</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">💡 Causa Root Identificada:</p>
+                                            <p class="text-xs">Registro con product_id=35775 y subsidiary_id=66 ya existe desde 2025-06-04, pero código intenta INSERT en lugar de UPDATE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Usa herramientas de base de datos para diagnosticar la causa root del problema
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 5: Análisis de Código -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-green-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔧 Localización: Búsqueda de Código</h3>
+                                    <span class="timeline-badge">Contextual</span>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-green-800 mb-2">🔍 Búsqueda Inteligente:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Busca "confirmSeasonaliyCalculation"</li>
+                                                <li>• Localiza función problemática</li>
+                                                <li>• Identifica líneas 418-431</li>
+                                                <li>• Analiza lógica de creación</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-green-800 mb-2">🎯 Problema Encontrado:</p>
+                                            <p class="text-xs">MonthlySeasonality::create() causa el error. Necesita updateOrCreate() para manejar duplicados</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Navega el código de manera contextual y localiza la función específica que causa el error
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 6: Implementación del Fix -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-indigo-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">⚡ Solución: Fix Robusto</h3>
+                                    <span class="timeline-badge">Producción</span>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">🔧 Implementación:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• updateOrCreate() en lugar de create()</li>
+                                                <li>• Manejo de excepciones mejorado</li>
+                                                <li>• Logging detallado</li>
+                                                <li>• Tests unitarios incluidos</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">✅ Testing Automático:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Crea testCase especializado</li>
+                                                <li>• Simula condición de duplicado</li>
+                                                <li>• Verifica manejo correcto</li>
+                                                <li>• Ejecuta y valida results</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> No solo fix el código, sino que incluye testing automático y manejo robusto de errores
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 7: Validación y Deploy -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-teal-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">✅ Validación: Testing y Deploy</h3>
+                                    <span class="timeline-badge">Productivo</span>
+                                </div>
+                                <div class="bg-teal-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-teal-800 mb-2">🧪 Testing Suite:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Tests unitarios automatizados</li>
+                                                <li>• Simulación de condiciones reales</li>
+                                                <li>• Verificación de edge cases</li>
+                                                <li>• Performance testing</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-teal-800 mb-2">🚀 Resultado Final:</p>
+                                            <p class="text-xs">Bug 20085 resuelto con fix robusto, testing completo y listo para producción</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Proceso completo desde identificación hasta deploy con verificación automatizada
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback de la IA sobre el proceso -->
+                    <div class="mt-8 bg-gradient-to-r from-red-500 to-pink-500 p-6 rounded-lg text-white shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">🧠 Análisis del Flujo de Bug Fixing con Azure DevOps</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-3">✨ Fortalezas Detectadas:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Integración sin fricciones:</strong> Un comando activa múltiples servicios MCP coordinados</li>
+                                    <li><strong>Análisis autónomo:</strong> Consulta Azure DevOps y diagnostica automáticamente</li>
+                                    <li><strong>Debugging sistemático:</strong> Combina análisis de BD, código y contexto del bug</li>
+                                    <li><strong>Solución production-ready:</strong> Fix + testing + documentación en un flujo</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-3">🎯 Valor Agregado:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Tiempo de resolución:</strong> De horas a minutos con análisis automatizado</li>
+                                    <li><strong>Calidad del fix:</strong> Incluye testing, logging y manejo de errores robusto</li>
+                                    <li><strong>Contexto completo:</strong> Desde Azure DevOps hasta código y base de datos</li>
+                                    <li><strong>Flujo unificado:</strong> Un solo agente maneja todo el proceso end-to-end</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caso 5: Generación Test Cases -->
+                <div id="caso5" class="use-case-content bg-white p-8 rounded-lg shadow-md mb-8 hidden">
+                    <h2 class="text-3xl font-bold text-brand-dark-blue mb-6 border-b pb-2">🧪 Caso 5: Generación de Test Cases en Azure DevOps</h2>
+                    
+                    <!-- Timeline Interactivo -->
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <!-- Momento 1: Activación Azure DevOps -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-emerald-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🚀 Inicio: Sesión Azure DevOps</h3>
+                                    <span class="timeline-badge">Especializada</span>
+                                </div>
+                                <div class="bg-emerald-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-emerald-800 mb-2">🎯 Prompt Usuario:</p>
+                                            <code class="text-xs bg-white p-2 rounded block">iniciar nueva sesion de trabajo con azure dev ops</code>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-emerald-800 mb-2">🤖 Activación IA:</p>
+                                            <p class="text-xs">Activa servicios MCP para Azure DevOps y presenta menú completo de capacidades</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Comando simple activa contexto especializado con 13 funcionalidades disponibles
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 2: Solicitud Compleja -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-blue-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">📋 Solicitud: Test Cases Historia 19676</h3>
+                                    <span class="timeline-badge">Compleja</span>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-800 mb-2">🎯 Solicitud Usuario:</p>
+                                            <p class="text-xs">"Para historia 19676, en base a tareas asociadas y código en ramas, armar test case paso a paso para entorno existente"</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-800 mb-2">🤖 Interpretación IA:</p>
+                                            <p class="text-xs">Requiere análisis multi-fuente: historia + tareas + código + entorno testing</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Solicitud compleja que requiere integración de múltiples fuentes de información
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 3: Investigación Automática -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-purple-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔍 Investigación: Análisis Multi-Fuente</h3>
+                                    <span class="timeline-badge">Autónomo</span>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">🔎 Búsqueda Automática:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Historia US #19676 (validación password)</li>
+                                                <li>• 7 tareas child asociadas</li>
+                                                <li>• Multiple pull requests</li>
+                                                <li>• Commits en diferentes repos</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-purple-800 mb-2">📊 Análisis Profundo:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Backend: Validación en Laravel</li>
+                                                <li>• Frontend: 4 aplicaciones afectadas</li>
+                                                <li>• BD: Campo require_change_password</li>
+                                                <li>• Testing: Cobertura completa necesaria</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Sin guía adicional, analiza automáticamente toda la información relacionada
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 4: Generación de Test Case -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-yellow-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">📝 Generación: Test Case Comprensivo</h3>
+                                    <span class="timeline-badge">Estructurado</span>
+                                </div>
+                                <div class="bg-yellow-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-yellow-800 mb-2">📋 Estructura Generada:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• 16 casos principales de prueba</li>
+                                                <li>• Backend + Frontend (4 apps)</li>
+                                                <li>• Edge cases y robustez</li>
+                                                <li>• Criterios de aceptación específicos</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-yellow-800 mb-2">🎯 Cobertura Completa:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Validación de passwords débiles</li>
+                                                <li>• Flujos de cambio de contraseña</li>
+                                                <li>• Persistencia en base de datos</li>
+                                                <li>• UI warnings en todas las apps</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Genera documentación de testing production-ready con cobertura exhaustiva
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 5: Corrección de Relaciones -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-orange-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔧 Corrección: Tipos de Relaciones</h3>
+                                    <span class="timeline-badge">Precisión</span>
+                                </div>
+                                <div class="bg-orange-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-orange-800 mb-2">⚠️ Feedback Usuario:</p>
+                                            <p class="text-xs">"Relaciones deben ser 'tested by' y 'tests' en lugar de parent-child"</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-orange-800 mb-2">🔄 Investigación IA:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Consulta documentación oficial</li>
+                                                <li>• Identifica tipos de relaciones Azure DevOps</li>
+                                                <li>• Microsoft.VSTS.Common.TestedBy</li>
+                                                <li>• Corrige relaciones automáticamente</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Feedback del usuario dispara investigación de documentación oficial y corrección automática
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 6: Creación Masiva en Azure DevOps -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-indigo-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🚀 Implementación: Creación Masiva</h3>
+                                    <span class="timeline-badge">Automatizada</span>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">⚙️ Creación Automática:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• 8 Test Cases creados en Azure DevOps</li>
+                                                <li>• Formato HTML structurado</li>
+                                                <li>• Relaciones "Tests" correctas</li>
+                                                <li>• Asignación automática al usuario</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-indigo-800 mb-2">📊 Estadísticas:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• 100% cobertura funcional</li>
+                                                <li>• 8 casos con revisión 2</li>
+                                                <li>• Estado "Design" listos para QA</li>
+                                                <li>• Trazabilidad completa a US #19676</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Convierte documentación local en work items estructurados directamente en Azure DevOps
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Momento 7: Gestión de Relaciones Avanzada -->
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker bg-teal-500"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <h3 class="font-bold text-lg text-brand-dark-blue">🔗 Gestión: Relaciones Avanzadas</h3>
+                                    <span class="timeline-badge">Profesional</span>
+                                </div>
+                                <div class="bg-teal-50 p-4 rounded-lg mb-3">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-teal-800 mb-2">🔧 Corrección de Relaciones:</p>
+                                            <ul class="text-xs space-y-1">
+                                                <li>• Detecta relaciones "Parent" incorrectas</li>
+                                                <li>• Establece relaciones "Tests" correctas</li>
+                                                <li>• Elimina relaciones obsoletas</li>
+                                                <li>• Valida estructura final</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-teal-800 mb-2">✅ Resultado:</p>
+                                            <p class="text-xs">Historia US #19676 completamente respaldada por suite de test cases robusta, con relaciones correctas y lista para ejecución por QA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-insight">
+                                    <strong>Observación:</strong> Gestiona tipos de relaciones específicos de Azure DevOps con precisión profesional
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback de la IA sobre el proceso -->
+                    <div class="mt-8 bg-gradient-to-r from-emerald-500 to-teal-500 p-6 rounded-lg text-white shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">🧠 Análisis del Flujo de Test Case Generation</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold mb-3">✨ Fortalezas Detectadas:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Análisis multi-fuente:</strong> Correlaciona historia, tareas, código y entorno automáticamente</li>
+                                    <li><strong>Cobertura exhaustiva:</strong> Genera test cases para backend, frontend y edge cases</li>
+                                    <li><strong>Integración nativa:</strong> Crea work items directamente en Azure DevOps con formato correcto</li>
+                                    <li><strong>Precisión técnica:</strong> Maneja tipos de relaciones específicos y documentación oficial</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-3">🎯 Valor Agregado:</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><strong>Productividad extrema:</strong> De días de trabajo manual a minutos automatizados</li>
+                                    <li><strong>Calidad profesional:</strong> Test cases estructurados siguiendo mejores prácticas</li>
+                                    <li><strong>Trazabilidad completa:</strong> Relaciones correctas entre historias y test cases</li>
+                                    <li><strong>Lista para producción:</strong> Directamente ejecutable por equipo de QA</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -406,6 +1960,40 @@
                 showSection('#introduccion');
             }
         });
+
+        // Función para navegación entre casos de uso
+        function showUseCase(casoId) {
+            // Ocultar todos los casos de uso
+            const allUseCases = document.querySelectorAll('.use-case-content');
+            allUseCases.forEach(caso => {
+                caso.classList.add('hidden');
+            });
+            
+            // Mostrar el caso seleccionado
+            const targetCase = document.getElementById(casoId);
+            if (targetCase) {
+                targetCase.classList.remove('hidden');
+            }
+            
+            // Actualizar pills activas
+            const allPills = document.querySelectorAll('.use-case-pill');
+            allPills.forEach(pill => {
+                pill.classList.remove('active');
+                pill.classList.add('bg-gray-200', 'text-gray-700');
+                pill.classList.remove('bg-brand-dark-blue', 'text-white');
+            });
+            
+            // Activar pill actual
+            const activePill = document.getElementById(`pill-${casoId}`);
+            if (activePill) {
+                activePill.classList.add('active');
+                activePill.classList.remove('bg-gray-200', 'text-gray-700');
+                activePill.classList.add('bg-brand-dark-blue', 'text-white');
+            }
+            
+            // Scroll al inicio de la sección
+            document.querySelector('main').scrollTop = 0;
+        }
     </script>
 </body>
 </html>

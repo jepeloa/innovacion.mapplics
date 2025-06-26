@@ -191,6 +191,21 @@
                     <li><a href="#entorno" class="nav-link flex items-center p-3 rounded-lg font-semibold text-gray-700 hover:bg-gray-200">
                         <span class="mr-3">⚙️</span> Entorno (VS Code)</a>
                     </li>
+                    <li><a href="#contexto-chat" class="nav-link flex items-center p-3 rounded-lg font-semibold text-gray-700 hover:bg-gray-200">
+                        <span class="mr-3">🧠</span> Contexto en Chat</a>
+                    </li>
+                    <li><a href="#instrucciones-personalizadas" class="nav-link flex items-center p-3 rounded-lg font-semibold text-gray-700 hover:bg-gray-200">
+                        <span class="mr-3">📝</span> Instrucciones Personalizadas</a>
+                    </li>
+                    <li><a href="#archivos-prompts" class="nav-link flex items-center p-3 rounded-lg font-semibold text-gray-700 hover:bg-gray-200">
+                        <span class="mr-3">📄</span> Archivos de Prompts</a>
+                    </li>
+                    <li><a href="#modos-chat" class="nav-link flex items-center p-3 rounded-lg font-semibold text-gray-700 hover:bg-gray-200">
+                        <span class="mr-3">🎛️</span> Modos de Chat</a>
+                    </li>
+                    <li><a href="#modo-agente" class="nav-link flex items-center p-3 rounded-lg font-semibold text-gray-700 hover:bg-gray-200">
+                        <span class="mr-3">🤖</span> Modo Agente</a>
+                    </li>
                     <li><a href="#vibe-coding-inicio" class="nav-link flex items-center p-3 rounded-lg font-semibold text-gray-700 hover:bg-gray-200">
                         <span class="mr-3">🚀</span> Iniciar Sesión Vibe Coding</a>
                     </li>
@@ -216,7 +231,7 @@
         <!-- Main Content -->
         <main class="flex-1 overflow-y-auto p-8">
             <div id="introduccion" class="content-section">
-                 <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">El Futuro del Desarrollo en Vivo</h1>
+                 <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">El camino del desarrollo con IA (Vibe Coding)</h1>
                  <p class="text-lg text-gray-600 mb-8">Una introducción al Vibe Coding Estructurado y el rol de GitHub Copilot.</p>
                  <div class="bg-white p-6 rounded-lg shadow-md mb-8">
                      <h2 class="text-2xl font-bold text-brand-medium-blue mb-4">¿Qué es el Vibe Coding Estructurado?</h2>
@@ -289,6 +304,132 @@
             <div id="entorno" class="content-section">
                  <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">Configurando tu Entorno en VS Code</h1>
                 <p class="text-lg text-gray-600 mb-8">Tu `settings.json` es la declaración de cómo trabajas y el panel de control de tu asistente de IA.</p>
+                
+                <!-- Tabla de Configuraciones Detallada -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">⚙️ Configuraciones Relevantes Detalladas</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="border border-gray-300 p-3 text-left font-bold">Archivo</th>
+                                    <th class="border border-gray-300 p-3 text-left font-bold">Configuración</th>
+                                    <th class="border border-gray-300 p-3 text-left font-bold">Valor</th>
+                                    <th class="border border-gray-300 p-3 text-left font-bold">Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- AutoSave -->
+                                <tr class="hover:bg-blue-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-blue-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">files.autoSave</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">onFocusChange</td>
+                                    <td class="border border-gray-300 p-3">Guarda automáticamente al perder el foco del editor</td>
+                                </tr>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-blue-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">files.autoSaveWorkspaceFilesOnly</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">true</td>
+                                    <td class="border border-gray-300 p-3">Solo guarda archivos del espacio de trabajo</td>
+                                </tr>
+                                
+                                <!-- Terminal -->
+                                <tr class="hover:bg-yellow-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-yellow-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">terminal.integrated.shellIntegration.decorationsEnabled</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-red-600">never</td>
+                                    <td class="border border-gray-300 p-3">Desactiva decoraciones en el terminal integrado</td>
+                                </tr>
+                                <tr class="hover:bg-yellow-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-yellow-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">terminal.integrated.defaultProfile.linux</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">bash</td>
+                                    <td class="border border-gray-300 p-3">Define bash como shell por defecto en Linux</td>
+                                </tr>
+                                
+                                <!-- Chat General -->
+                                <tr class="hover:bg-purple-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-purple-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">chat.mcp.discovery.enabled</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">true</td>
+                                    <td class="border border-gray-300 p-3">Habilita descubrimiento automático de servidores MCP</td>
+                                </tr>
+                                <tr class="hover:bg-purple-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-purple-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">chat.tools.autoApprove</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-orange-600">true</td>
+                                    <td class="border border-gray-300 p-3"><span class="text-red-600 font-bold">⚠️ RIESGO:</span> Aprueba automáticamente herramientas</td>
+                                </tr>
+                                <tr class="hover:bg-purple-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-purple-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">chat.agent.maxRequests</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">1000</td>
+                                    <td class="border border-gray-300 p-3">Límite de solicitudes para el agente de chat</td>
+                                </tr>
+                                <tr class="hover:bg-purple-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-purple-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">chat.editing.autoAcceptDelay</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">1</td>
+                                    <td class="border border-gray-300 p-3">Retraso para aceptar ediciones automáticas (segundos)</td>
+                                </tr>
+                                <tr class="hover:bg-purple-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-purple-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">chat.implicitContext.enabled</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">{"editor": "always"}</td>
+                                    <td class="border border-gray-300 p-3">Siempre incluye contexto del editor en chat</td>
+                                </tr>
+                                
+                                <!-- GitHub Copilot -->
+                                <tr class="hover:bg-green-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-green-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">github.copilot.enable</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">{"plaintext": true, "markdown": true}</td>
+                                    <td class="border border-gray-300 p-3">Habilita Copilot en archivos de texto y markdown</td>
+                                </tr>
+                                <tr class="hover:bg-green-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-green-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">github.copilot.chat.localeOverride</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">es</td>
+                                    <td class="border border-gray-300 p-3">Fuerza idioma español en Copilot Chat</td>
+                                </tr>
+                                <tr class="hover:bg-green-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-green-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">github.copilot.chat.agent.thinkingTool</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">true</td>
+                                    <td class="border border-gray-300 p-3">Habilita herramienta de pensamiento en chat</td>
+                                </tr>
+                                <tr class="hover:bg-green-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-green-50">settings.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">github.copilot.nextEditSuggestions.enabled</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">true</td>
+                                    <td class="border border-gray-300 p-3">Habilita sugerencias de edición siguientes</td>
+                                </tr>
+                                
+                                <!-- MCP Servers -->
+                                <tr class="hover:bg-orange-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-orange-50">mcp.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">servers.ado</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-blue-600">Azure DevOps MCP</td>
+                                    <td class="border border-gray-300 p-3">Servidor MCP para integración con Azure DevOps</td>
+                                </tr>
+                                <tr class="hover:bg-orange-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-orange-50">mcp.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">servers.context7</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-blue-600">Context7 MCP</td>
+                                    <td class="border border-gray-300 p-3">Servidor MCP para búsqueda y contexto extendido</td>
+                                </tr>
+                                <tr class="hover:bg-orange-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs bg-orange-50">mcp.json</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">servers.sequential-thinking</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-blue-600">Sequential Thinking</td>
+                                    <td class="border border-gray-300 p-3">Servidor MCP para pensamiento secuencial</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tarjetas de Configuraciones Críticas -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white p-6 rounded-lg shadow-md use-case-card border-l-brand-light-blue">
                         <h3 class="font-bold text-xl text-brand-medium-blue mb-3">🌐 Forzar Idioma (`localeOverride`)</h3>
@@ -309,6 +450,1955 @@
                         <h3 class="font-bold text-xl text-brand-medium-blue mb-3">✅ Auto-Aprobación de Herramientas</h3>
                         <p class="text-sm mb-3"><b class="text-green-600">Ventaja:</b> Flujo Ágil. Elimina clics y confirmaciones, agilizando el trabajo.</p>
                         <p class="text-sm text-red-700"><b class="text-red-700">Riesgo:</b> ¡ALTO! Una sugerencia errónea podría ejecutar comandos destructivos. **Solo para expertos.**</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contexto-chat" class="content-section">
+                <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">🧠 Gestión de Contexto en Chat</h1>
+                <p class="text-lg text-gray-600 mb-8">Domina el arte de proporcionar el contexto correcto para obtener respuestas más relevantes y precisas de la IA.</p>
+                
+                <!-- Contexto Implícito -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🔄 Contexto Implícito Automático</h2>
+                    <p class="text-gray-600 mb-6">VS Code incluye automáticamente información contextual basada en tu actividad actual.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">📝 Texto Seleccionado</h3>
+                            <p class="text-sm text-gray-700 mb-3">Cualquier código o texto que tengas seleccionado en el editor activo</p>
+                            <div class="bg-white p-2 rounded text-xs text-blue-800 border-l-4 border-blue-500">
+                                Automático: Se incluye sin configuración
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">📄 Archivo Activo</h3>
+                            <p class="text-sm text-gray-700 mb-3">Nombre del archivo o notebook actualmente abierto</p>
+                            <div class="bg-white p-2 rounded text-xs text-green-800 border-l-4 border-green-500">
+                                Sugerido: Aparece como elemento sugerido
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">💭 Historial</h3>
+                            <p class="text-sm text-gray-700 mb-3">Conversación anterior en la sesión actual de chat</p>
+                            <div class="bg-white p-2 rounded text-xs text-purple-800 border-l-4 border-purple-500">
+                                Continuo: Permite preguntas de seguimiento
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- #-mentions -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6"># Referencias Explícitas</h2>
+                    <p class="text-gray-600 mb-6">Usa el símbolo <code class="bg-gray-200 px-2 py-1 rounded">#</code> para referenciar contexto específico en tus prompts.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">🗂️ Referencias de Archivos y Código</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="font-semibold text-sm text-gray-800 mb-2">Archivos específicos:</div>
+                                    <code class="text-xs bg-gray-800 text-green-400 p-2 rounded block">#src/components/Header.tsx</code>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="font-semibold text-sm text-gray-800 mb-2">Carpetas completas:</div>
+                                    <code class="text-xs bg-gray-800 text-green-400 p-2 rounded block">#src/utils/</code>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="font-semibold text-sm text-gray-800 mb-2">Símbolos de código:</div>
+                                    <code class="text-xs bg-gray-800 text-green-400 p-2 rounded block">#getUserData (función)</code>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">🔍 Referencias Avanzadas</h3>
+                            <div class="space-y-4">
+                                <div class="bg-blue-50 p-4 rounded-lg">
+                                    <div class="font-semibold text-sm text-blue-800 mb-2">Codebase completo:</div>
+                                    <code class="text-xs bg-gray-800 text-blue-400 p-2 rounded block">#codebase</code>
+                                    <p class="text-xs text-blue-600 mt-1">Búsqueda automática en todo el proyecto</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded-lg">
+                                    <div class="font-semibold text-sm text-green-800 mb-2">Cambios pendientes:</div>
+                                    <code class="text-xs bg-gray-800 text-green-400 p-2 rounded block">#changes</code>
+                                    <p class="text-xs text-green-600 mt-1">Git diffs de archivos modificados</p>
+                                </div>
+                                <div class="bg-orange-50 p-4 rounded-lg">
+                                    <div class="font-semibold text-sm text-orange-800 mb-2">Contenido web:</div>
+                                    <code class="text-xs bg-gray-800 text-orange-400 p-2 rounded block">#fetch https://docs.example.com</code>
+                                    <p class="text-xs text-orange-600 mt-1">Obtiene contenido de URLs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- @-mentions -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">@ Participantes de Chat</h2>
+                    <p class="text-gray-600 mb-6">Los participantes son expertos en dominios específicos que puedes invocar para tareas especializadas.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">⚙️</div>
+                            <h4 class="font-bold text-brand-dark-blue">@vscode</h4>
+                            <p class="text-xs text-gray-600 mt-2">Experto en VS Code y API de extensiones</p>
+                            <code class="text-xs bg-gray-800 text-white p-1 rounded mt-2 block">@vscode how to enable word wrapping</code>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🖥️</div>
+                            <h4 class="font-bold text-brand-dark-blue">@terminal</h4>
+                            <p class="text-xs text-gray-600 mt-2">Ayuda con comandos de shell</p>
+                            <code class="text-xs bg-gray-800 text-white p-1 rounded mt-2 block">@terminal largest files in directory</code>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🎨</div>
+                            <h4 class="font-bold text-brand-dark-blue">@workspace</h4>
+                            <p class="text-xs text-gray-600 mt-2">Conocimiento sobre tu proyecto</p>
+                            <code class="text-xs bg-gray-800 text-white p-1 rounded mt-2 block">@workspace explain architecture</code>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🔧</div>
+                            <h4 class="font-bold text-brand-dark-blue">Extensiones</h4>
+                            <p class="text-xs text-gray-600 mt-2">Participantes de extensiones</p>
+                            <p class="text-xs text-gray-500 mt-2">Varia según extensiones instaladas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejemplos Prácticos -->
+                <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-8 rounded-lg shadow-md text-white">
+                    <h2 class="text-2xl font-bold mb-6">💡 Ejemplos Prácticos de Contexto</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg mb-3">🔍 Depuración con Contexto</h3>
+                            <div class="bg-black bg-opacity-30 p-3 rounded text-sm font-mono">
+                                <p>Explica este error #src/api/auth.js #changes</p>
+                            </div>
+                            <p class="text-sm mt-3 opacity-90">Incluye el archivo problemático y los cambios recientes</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg mb-3">🏗️ Desarrollo Consistente</h3>
+                            <div class="bg-black bg-opacity-30 p-3 rounded text-sm font-mono">
+                                <p>Crea un endpoint similar a #getUserData pero para productos #codebase</p>
+                            </div>
+                            <p class="text-sm mt-3 opacity-90">Usa patrones existentes del proyecto completo</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg mb-3">📚 Documentación Externa</h3>
+                            <div class="bg-black bg-opacity-30 p-3 rounded text-sm font-mono">
+                                <p>Actualiza según nueva API #fetch https://docs.api.com/v2</p>
+                            </div>
+                            <p class="text-sm mt-3 opacity-90">Incluye documentación actualizada como contexto</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg mb-3">⚡ Terminal y Configuración</h3>
+                            <div class="bg-black bg-opacity-30 p-3 rounded text-sm font-mono">
+                                <p>@terminal optimizar build script @vscode configurar tasks.json</p>
+                            </div>
+                            <p class="text-sm mt-3 opacity-90">Combina expertos para soluciones complejas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <p class="text-xl font-semibold">La clave está en ser específico con el contexto que proporcionas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="personalizacion-copilot" class="content-section">
+                <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">🎛️ Personalización de GitHub Copilot</h1>
+                <p class="text-lg text-gray-600 mb-8">Adapta el comportamiento de GitHub Copilot a tu estilo de desarrollo y las necesidades específicas de tu proyecto.</p>
+                
+                <!-- Visión General -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🔍 Panorama de Personalización</h2>
+                    <p class="text-gray-600 mb-6">GitHub Copilot ofrece múltiples niveles de personalización para adaptarse a tu flujo de trabajo específico.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">📝 Instrucciones Personalizadas</h3>
+                            <p class="text-sm text-gray-700 mb-3">Define cómo quieres que Copilot responda en tu proyecto específico</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Estilos de código preferidos</li>
+                                <li>• Patrones arquitectónicos</li>
+                                <li>• Convenciones de nomenclatura</li>
+                                <li>• Librerías y frameworks</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border-l-4 border-green-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">📄 Archivos de Prompts</h3>
+                            <p class="text-sm text-gray-700 mb-3">Plantillas reutilizables para tareas específicas y repetitivas</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Prompts para testing</li>
+                                <li>• Generación de documentación</li>
+                                <li>• Revisión de código</li>
+                                <li>• Refactoring patterns</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🎨 Modos de Chat</h3>
+                            <p class="text-sm text-gray-700 mb-3">Comportamientos especializados para diferentes tipos de trabajo</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Modo arquitectura</li>
+                                <li>• Modo debugging</li>
+                                <li>• Modo documentación</li>
+                                <li>• Modos personalizados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jerarquía de Configuración -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🏗️ Jerarquía de Configuración</h2>
+                    <p class="text-gray-600 mb-6">El orden de precedencia determina qué configuraciones toman prioridad.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🔴</span>
+                                <div>
+                                    <h3 class="font-bold text-red-800">1. Configuraciones de VS Code</h3>
+                                    <p class="text-sm text-red-600">settings.json - Máxima prioridad</p>
+                                </div>
+                            </div>
+                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">HIGHEST</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🟠</span>
+                                <div>
+                                    <h3 class="font-bold text-orange-800">2. Instrucciones de Workspace</h3>
+                                    <p class="text-sm text-orange-600">.github/copilot-instructions.md - Nivel proyecto</p>
+                                </div>
+                            </div>
+                            <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">HIGH</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🟡</span>
+                                <div>
+                                    <h3 class="font-bold text-yellow-800">3. Instrucciones de Directorio</h3>
+                                    <p class="text-sm text-yellow-600">.instructions.md - Nivel carpeta</p>
+                                </div>
+                            </div>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">MEDIUM</span>
+                        </div>
+                        
+                        <div class="flex items-center justify-between bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🟢</span>
+                                <div>
+                                    <h3 class="font-bold text-green-800">4. Configuraciones por Defecto</h3>
+                                    <p class="text-sm text-green-600">Comportamiento estándar de Copilot</p>
+                                </div>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">LOWEST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tipos de Personalización -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🎯 Tipos de Personalización Disponibles</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📋 Configuraciones Básicas</h3>
+                            <div class="space-y-3">
+                                <div class="bg-gray-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Lenguaje preferido</h4>
+                                    <p class="text-xs text-gray-600">Instrucciones específicas del lenguaje de programación</p>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Estilo de código</h4>
+                                    <p class="text-xs text-gray-600">Indentación, nomenclatura, estructura</p>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Frameworks</h4>
+                                    <p class="text-xs text-gray-600">React, Angular, Vue.js, etc.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">🚀 Configuraciones Avanzadas</h3>
+                            <div class="space-y-3">
+                                <div class="bg-blue-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Patrones arquitectónicos</h4>
+                                    <p class="text-xs text-gray-600">DDD, Clean Architecture, MVVM</p>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Políticas de testing</h4>
+                                    <p class="text-xs text-gray-600">TDD, coverage mínimo, tipos de tests</p>
+                                </div>
+                                <div class="bg-purple-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Flujos de trabajo</h4>
+                                    <p class="text-xs text-gray-600">Git flow, deployment, CI/CD</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Configuraciones de VS Code -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">⚙️ Configuraciones Clave en VS Code</h2>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm border-collapse border border-gray-300">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="border border-gray-300 p-3 text-left font-bold">Configuración</th>
+                                    <th class="border border-gray-300 p-3 text-left font-bold">Valor</th>
+                                    <th class="border border-gray-300 p-3 text-left font-bold">Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-blue-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">github.copilot.chat.customInstructions</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">true</td>
+                                    <td class="border border-gray-300 p-3">Habilita instrucciones personalizadas</td>
+                                </tr>
+                                <tr class="hover:bg-green-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">github.copilot.chat.promptFiles</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-green-600">true</td>
+                                    <td class="border border-gray-300 p-3">Permite usar archivos de prompts</td>
+                                </tr>
+                                <tr class="hover:bg-orange-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">github.copilot.chat.chatModes</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-orange-600">true</td>
+                                    <td class="border border-gray-300 p-3">Habilita modos de chat personalizados</td>
+                                </tr>
+                                <tr class="hover:bg-purple-50">
+                                    <td class="border border-gray-300 p-3 font-mono text-xs">github.copilot.chat.localeOverride</td>
+                                    <td class="border border-gray-300 p-3 font-mono text-xs text-purple-600">"es"</td>
+                                    <td class="border border-gray-300 p-3">Fuerza idioma español en respuestas</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Beneficios de la Personalización -->
+                <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-8 rounded-lg shadow-md text-white">
+                    <h2 class="text-2xl font-bold mb-6">🎯 Beneficios de la Personalización</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <div class="text-3xl mb-3">⚡</div>
+                            <h3 class="font-bold text-lg mb-2">Eficiencia</h3>
+                            <p class="text-sm opacity-90">Respuestas más precisas desde el primer intento, reduciendo iteraciones</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <div class="text-3xl mb-3">🎯</div>
+                            <h3 class="font-bold text-lg mb-2">Consistencia</h3>
+                            <p class="text-sm opacity-90">Código coherente con tus estándares y patrones establecidos</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <div class="text-3xl mb-3">🚀</div>
+                            <h3 class="font-bold text-lg mb-2">Productividad</h3>
+                            <p class="text-sm opacity-90">Menos tiempo explicando contexto, más tiempo desarrollando</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <p class="text-xl font-semibold">Una configuración inicial sólida ahorra horas de trabajo futuro</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="instrucciones-personalizadas" class="content-section">
+                <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">📝 Instrucciones Personalizadas</h1>
+                <p class="text-lg text-gray-600 mb-8">Define el comportamiento de GitHub Copilot mediante archivos de instrucciones que guían sus respuestas según tu contexto específico.</p>
+                
+                <!-- Tipos de Archivos de Instrucciones -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">📋 Tipos de Archivos de Instrucciones</h2>
+                    <p class="text-gray-600 mb-6">Cada tipo de archivo tiene un alcance y propósito específico en la jerarquía de configuraciones.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border-l-4 border-blue-500">
+                                <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🌐 .github/copilot-instructions.md</h3>
+                                <p class="text-sm text-gray-700 mb-3"><strong>Alcance:</strong> Todo el workspace/proyecto</p>
+                                <p class="text-sm text-gray-700 mb-3"><strong>Propósito:</strong> Configuraciones globales del proyecto</p>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>• Arquitectura del proyecto</li>
+                                    <li>• Estándares de código</li>
+                                    <li>• Tecnologías utilizadas</li>
+                                    <li>• Convenciones de nomenclatura</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border-l-4 border-green-500">
+                                <h3 class="font-bold text-lg text-brand-dark-blue mb-3">📁 .instructions.md</h3>
+                                <p class="text-sm text-gray-700 mb-3"><strong>Alcance:</strong> Directorio específico y subdirectorios</p>
+                                <p class="text-sm text-gray-700 mb-3"><strong>Propósito:</strong> Reglas específicas por módulo/componente</p>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>• Patrones específicos del módulo</li>
+                                    <li>• Librerías y dependencias locales</li>
+                                    <li>• Reglas de testing específicas</li>
+                                    <li>• Documentación contextual</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">🏗️ Jerarquía de Aplicación</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3">
+                                    <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">1</span>
+                                    <span class="text-sm">Se lee .github/copilot-instructions.md</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">2</span>
+                                    <span class="text-sm">Se buscan .instructions.md en la ruta activa</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">3</span>
+                                    <span class="text-sm">Se combinan y priorizan las más específicas</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">4</span>
+                                    <span class="text-sm">Se aplican al contexto de la conversación</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estructura de Instrucciones -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">📝 Estructura de las Instrucciones</h2>
+                    <p class="text-gray-600 mb-6">Una estructura clara y bien organizada maximiza la efectividad de las instrucciones personalizadas.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📄 Ejemplo: .github/copilot-instructions.md</h3>
+                            <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-x-auto">
+                                <pre><code># Instrucciones para GitHub Copilot
+
+## Contexto del Proyecto
+Este es un proyecto React con TypeScript 
+usando Clean Architecture y TDD.
+
+## Tecnologías
+- React 18 con Hooks
+- TypeScript (strict mode)
+- Tailwind CSS para estilos
+- Jest + React Testing Library
+
+## Estándares de Código
+- Usar interfaces en lugar de types
+- Props con destructuring
+- Nombres en camelCase para variables
+- Nombres en PascalCase para componentes
+
+## Patrones Requeridos
+- Componentes funcionales únicamente
+- Custom hooks para lógica reutilizable
+- Manejo de estado con useReducer para 
+  estados complejos
+
+## Testing
+- Todo componente debe tener test
+- Coverage mínimo del 80%
+- Tests descriptivos con Given-When-Then</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📁 Ejemplo: src/components/.instructions.md</h3>
+                            <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-x-auto">
+                                <pre><code># Instrucciones para Componentes
+
+## Estructura de Componentes
+Todos los componentes en esta carpeta deben:
+
+### Archivos Requeridos
+- ComponentName.tsx (componente principal)
+- ComponentName.test.tsx (tests)
+- ComponentName.stories.tsx (storybook)
+- index.ts (barrel export)
+
+### Props Interface
+```typescript
+interface ComponentNameProps {
+  className?: string;
+  children?: React.ReactNode;
+  // otras props específicas
+}
+```
+
+### Estructura del Componente
+```typescript
+export const ComponentName: React.FC<Props> = ({
+  className = "",
+  children,
+  ...props
+}) => {
+  return (
+    <div 
+      className={`base-styles ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+```</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secciones Importantes -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🎯 Secciones Importantes en las Instrucciones</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🏗️ Arquitectura</h3>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Patrones utilizados</li>
+                                <li>• Estructura de carpetas</li>
+                                <li>• Separación de responsabilidades</li>
+                                <li>• Principios SOLID</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🔧 Tecnologías</h3>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Frameworks y librerías</li>
+                                <li>• Versiones específicas</li>
+                                <li>• Configuraciones especiales</li>
+                                <li>• Herramientas de build</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">📏 Estándares</h3>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Convenciones de nombres</li>
+                                <li>• Formato de código</li>
+                                <li>• Comentarios y documentación</li>
+                                <li>• Manejo de errores</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🧪 Testing</h3>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Tipos de tests requeridos</li>
+                                <li>• Herramientas de testing</li>
+                                <li>• Coverage esperado</li>
+                                <li>• Patrones de test</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-pink-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🎨 UI/UX</h3>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Sistema de diseño</li>
+                                <li>• Patrones de componentes</li>
+                                <li>• Accesibilidad (a11y)</li>
+                                <li>• Responsive design</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🔒 Seguridad</h3>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Validación de inputs</li>
+                                <li>• Manejo de credenciales</li>
+                                <li>• Políticas de CORS</li>
+                                <li>• Sanitización de datos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mejores Prácticas -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">✨ Mejores Prácticas</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">✅ Recomendaciones</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Ser específico y concreto</h4>
+                                        <p class="text-xs text-gray-600">Proporciona ejemplos de código cuando sea posible</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Usar estructura jerárquica</h4>
+                                        <p class="text-xs text-gray-600">Organiza con títulos y secciones claras</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Incluir ejemplos prácticos</h4>
+                                        <p class="text-xs text-gray-600">Muestra el código esperado, no solo descripciones</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-xl">✓</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Mantener actualizado</h4>
+                                        <p class="text-xs text-gray-600">Revisa y actualiza con cambios del proyecto</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">❌ Evitar</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-red-500 text-xl">✗</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Instrucciones vagas</h4>
+                                        <p class="text-xs text-gray-600">"Escribe buen código" no es útil para Copilot</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-red-500 text-xl">✗</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Instrucciones contradictorias</h4>
+                                        <p class="text-xs text-gray-600">Verifica coherencia entre archivos</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-red-500 text-xl">✗</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Demasiada información</h4>
+                                        <p class="text-xs text-gray-600">Mantén el foco en lo esencial</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-red-500 text-xl">✗</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Instrucciones obsoletas</h4>
+                                        <p class="text-xs text-gray-600">Información desactualizada confunde a la IA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caso de Uso Práctico -->
+                <div class="bg-gradient-to-r from-green-600 to-teal-600 p-8 rounded-lg shadow-md text-white">
+                    <h2 class="text-2xl font-bold mb-6">🔧 Caso de Uso: Proyecto E-commerce</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg mb-3">🛒 Configuración Global</h3>
+                            <div class="bg-black bg-opacity-30 p-3 rounded text-xs font-mono">
+                                <p># Proyecto E-commerce con Next.js</p>
+                                <p>## Stack Tecnológico</p>
+                                <p>- Next.js 14 con App Router</p>
+                                <p>- TypeScript (modo estricto)</p>
+                                <p>- Tailwind + Shadcn/ui</p>
+                                <p>- Prisma + PostgreSQL</p>
+                                <p>- Stripe para pagos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <h3 class="font-bold text-lg mb-3">🧩 Configuración de Componentes</h3>
+                            <div class="bg-black bg-opacity-30 p-3 rounded text-xs font-mono">
+                                <p># Componentes de Producto</p>
+                                <p>## Props Requeridas</p>
+                                <p>- product: Product (from Prisma)</p>
+                                <p>- onAddToCart?: function</p>
+                                <p>- variant?: 'card' | 'list' | 'detail'</p>
+                                <p>## Accesibilidad</p>
+                                <p>- ARIA labels obligatorios</p>
+                                <p>- Keyboard navigation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <p class="text-xl font-semibold">Con instrucciones claras, Copilot genera código que respeta tu arquitectura</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="archivos-prompts" class="content-section">
+                <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">📄 Archivos de Prompts</h1>
+                <p class="text-lg text-gray-600 mb-8">Crea plantillas reutilizables para tareas específicas que puedes invocar con un simple comando, ahorrando tiempo y manteniendo consistencia.</p>
+                
+                <!-- ¿Qué son los Archivos de Prompts? -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🤔 ¿Qué son los Archivos de Prompts?</h2>
+                    <p class="text-gray-600 mb-6">Los archivos de prompts son plantillas predefinidas que encapsulan instrucciones complejas para tareas repetitivas.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🎯 Propósito</h3>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• Estandarizar tareas repetitivas</li>
+                                <li>• Reducir tiempo de configuración</li>
+                                <li>• Mantener consistencia en el equipo</li>
+                                <li>• Compartir mejores prácticas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border-l-4 border-green-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">📁 Ubicación</h3>
+                            <div class="text-sm text-gray-700 space-y-2">
+                                <div class="bg-gray-100 p-2 rounded font-mono text-xs">
+                                    .github/copilot/prompts/
+                                </div>
+                                <p>Directorio estándar para archivos de prompts del proyecto</p>
+                                <p class="text-xs text-gray-500">Los archivos deben tener extensión .md</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🚀 Activación</h3>
+                            <div class="text-sm text-gray-700 space-y-2">
+                                <div class="bg-gray-100 p-2 rounded">
+                                    <code class="text-xs">/prompt nombre-archivo</code>
+                                </div>
+                                <p>Comando para ejecutar un prompt específico en GitHub Copilot Chat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estructura de un Archivo de Prompt -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">📝 Estructura de un Archivo de Prompt</h2>
+                    <p class="text-gray-600 mb-6">Un archivo de prompt bien estructurado incluye metadatos, contexto, instrucciones y ejemplos.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📋 Componentes Obligatorios</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Metadatos YAML</h4>
+                                    <div class="bg-gray-900 text-gray-100 p-2 rounded text-xs font-mono">
+                                        <pre>---
+title: Generar Test Case
+description: Crea tests unitarios completos
+author: equipo-dev
+version: 1.0
+---</pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Instrucciones</h4>
+                                    <p class="text-xs text-gray-600">Descripción clara de qué debe hacer Copilot</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Variables (Opcional)</h4>
+                                    <p class="text-xs text-gray-600">Parámetros que se pueden personalizar</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📄 Ejemplo: test-generator.md</h3>
+                            <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-y-auto max-h-96">
+                                <pre><code>---
+title: Generador de Tests Unitarios
+description: Crea tests completos con Jest y RTL
+author: team-qa
+version: 1.2
+---
+
+# Generador de Tests Unitarios
+
+## Objetivo
+Generar tests unitarios completos para componentes React usando Jest y React Testing Library.
+
+## Instrucciones
+Analiza el componente seleccionado y genera tests que cubran:
+
+1. **Renderizado básico**: Verificar que el componente se monta sin errores
+2. **Props**: Testear todas las props y sus valores por defecto
+3. **Interacciones**: Simular clicks, cambios de input, etc.
+4. **Estados**: Verificar cambios de estado si aplica
+5. **Accesibilidad**: Tests básicos de a11y
+
+## Estructura del Test
+```typescript
+import { render, screen, fireEvent } from '@testing-library/react';
+import { ComponentName } from './ComponentName';
+
+describe('ComponentName', () => {
+  it('should render without errors', () => {
+    // Test básico de renderizado
+  });
+
+  it('should handle props correctly', () => {
+    // Test de props
+  });
+
+  it('should handle user interactions', () => {
+    // Test de interacciones
+  });
+});
+```
+
+## Convenciones
+- Usar describe blocks para agrupar tests relacionados
+- Nombres descriptivos en inglés
+- Setup compartido en beforeEach cuando sea necesario
+- Cleanup automático con afterEach si se requiere</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tipos de Prompts Útiles -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🎨 Tipos de Prompts Útiles</h2>
+                    <p class="text-gray-600 mb-6">Ejemplos de archivos de prompts que mejoran significativamente la productividad del equipo.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🧪 code-review.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Revisión sistemática de código</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Análisis de calidad</li>
+                                <li>• Detección de problemas</li>
+                                <li>• Sugerencias de mejora</li>
+                                <li>• Verificación de estándares</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>/prompt code-review</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">📚 documentation.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Generación de documentación</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• README automático</li>
+                                <li>• JSDoc/TSDoc completo</li>
+                                <li>• Documentación de APIs</li>
+                                <li>• Guías de uso</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>/prompt documentation</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🔧 refactor.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Refactoring inteligente</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Mejora de performance</li>
+                                <li>• Simplificación de lógica</li>
+                                <li>• Aplicación de patrones</li>
+                                <li>• Eliminación de code smells</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>/prompt refactor</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🎯 feature.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Desarrollo de características</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Scaffolding de componentes</li>
+                                <li>• Implementación de lógica</li>
+                                <li>• Tests automáticos</li>
+                                <li>• Documentación incluida</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>/prompt feature</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-pink-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🐛 debug.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Asistente de debugging</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Análisis de errores</li>
+                                <li>• Logging estratégico</li>
+                                <li>• Identificación de causas</li>
+                                <li>• Soluciones sugeridas</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>/prompt debug</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🔒 security.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Auditoría de seguridad</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Análisis de vulnerabilidades</li>
+                                <li>• Validación de inputs</li>
+                                <li>• Revisión de permisos</li>
+                                <li>• Mejores prácticas</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>/prompt security</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Variables y Personalización -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🔧 Variables y Personalización</h2>
+                    <p class="text-gray-600 mb-6">Haz tus prompts más flexibles usando variables que se pueden configurar al momento de la ejecución.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📝 Sintaxis de Variables</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Variable Simple</h4>
+                                    <div class="bg-gray-900 text-gray-100 p-2 rounded text-xs font-mono">
+                                        <code>{{variable_name}}</code>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">Se reemplaza por el valor proporcionado</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Variable con Valor por Defecto</h4>
+                                    <div class="bg-gray-900 text-gray-100 p-2 rounded text-xs font-mono">
+                                        <code>{{variable_name:default_value}}</code>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">Usa default_value si no se proporciona</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Variable Condicional</h4>
+                                    <div class="bg-gray-900 text-gray-100 p-2 rounded text-xs font-mono">
+                                        <code>{{#if variable_name}}contenido{{/if}}</code>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">Incluye contenido solo si la variable existe</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">💡 Ejemplo Práctico</h3>
+                            <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-y-auto max-h-80">
+                                <pre><code>---
+title: Generador de {{component_type:Component}}
+description: Crea {{component_type}} con tests incluidos
+variables:
+  component_type: Component
+  test_framework: Jest
+  styling: CSS Modules
+---
+
+# Generador de {{component_type}}
+
+Crea un {{component_type}} funcional de React siguiendo nuestras convenciones.
+
+## Especificaciones
+- Framework de testing: {{test_framework}}
+- Sistema de estilos: {{styling:CSS Modules}}
+- TypeScript: Obligatorio
+
+{{#if component_type}}
+## Estructura para {{component_type}}
+{{/if}}
+
+```typescript
+interface {{component_type}}Props {
+  className?: string;
+  children?: React.ReactNode;
+}
+
+export const {{component_type}}: React.FC<{{component_type}}Props> = ({
+  className = "",
+  children
+}) => {
+  return (
+    <div className={`{{component_type.toLowerCase()}} ${className}`}>
+      {children}
+    </div>
+  );
+};
+```
+
+{{#if test_framework}}
+## Tests con {{test_framework}}
+Genera tests completos que verifiquen todas las props y comportamientos.
+{{/if}}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mejores Prácticas -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">✨ Mejores Prácticas para Archivos de Prompts</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">✅ Hacer</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-lg">✓</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Nombres descriptivos</h4>
+                                        <p class="text-xs text-gray-600">test-generator.md en lugar de test.md</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-lg">✓</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Versionado</h4>
+                                        <p class="text-xs text-gray-600">Incluir versión en metadatos para control de cambios</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-lg">✓</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Ejemplos incluidos</h4>
+                                        <p class="text-xs text-gray-600">Mostrar el resultado esperado</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-green-500 text-lg">✓</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Testing del prompt</h4>
+                                        <p class="text-xs text-gray-600">Verificar que produce los resultados esperados</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">❌ Evitar</h3>
+                            <div class="space-y-3">
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-red-500 text-lg">✗</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Prompts demasiado generales</h4>
+                                        <p class="text-xs text-gray-600">Ser específico sobre qué se espera</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-red-500 text-lg">✗</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Instrucciones ambiguas</h4>
+                                        <p class="text-xs text-gray-600">Claridad sobre formato y estructura</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-red-500 text-lg">✗</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Dependencias no documentadas</h4>
+                                        <p class="text-xs text-gray-600">Especificar todos los requisitos</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <span class="text-red-500 text-lg">✗</span>
+                                    <div>
+                                        <h4 class="font-semibold text-sm">Prompts obsoletos</h4>
+                                        <p class="text-xs text-gray-600">Mantener actualizado con cambios del proyecto</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resultado Final -->
+                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 p-8 rounded-lg shadow-md text-white">
+                    <h2 class="text-2xl font-bold mb-6">🎯 Impacto de los Archivos de Prompts</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                            <div class="text-3xl mb-3">⚡</div>
+                            <h3 class="font-bold text-lg mb-2">Velocidad</h3>
+                            <p class="text-sm opacity-90">Tareas repetitivas se ejecutan en segundos en lugar de minutos</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                            <div class="text-3xl mb-3">🎯</div>
+                            <h3 class="font-bold text-lg mb-2">Consistencia</h3>
+                            <p class="text-sm opacity-90">Todo el equipo sigue los mismos patrones y estándares</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                            <div class="text-3xl mb-3">📈</div>
+                            <h3 class="font-bold text-lg mb-2">Calidad</h3>
+                            <p class="text-sm opacity-90">Menos errores humanos, más adherencia a mejores prácticas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <p class="text-xl font-semibold">Los archivos de prompts transforman conocimiento tribal en herramientas automatizadas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modos-chat" class="content-section">
+                <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">🎛️ Modos de Chat</h1>
+                <p class="text-lg text-gray-600 mb-8">Especializa el comportamiento de GitHub Copilot Chat para diferentes tipos de trabajo mediante modos predefinidos y personalizados.</p>
+                
+                <!-- Introducción a los Modos -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🧠 ¿Qué son los Modos de Chat?</h2>
+                    <p class="text-gray-600 mb-6">Los modos de chat configuran el comportamiento, estilo y enfoque de respuesta de GitHub Copilot para tareas específicas.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🎯 Especialización</h3>
+                            <p class="text-sm text-gray-700 mb-3">Cada modo optimiza las respuestas para un tipo específico de tarea</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Arquitectura y diseño</li>
+                                <li>• Debugging y troubleshooting</li>
+                                <li>• Testing y QA</li>
+                                <li>• Documentación técnica</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border-l-4 border-green-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🔄 Cambio Dinámico</h3>
+                            <p class="text-sm text-gray-700 mb-3">Puedes cambiar de modo durante la conversación según sea necesario</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Sin reiniciar la sesión</li>
+                                <li>• Mantiene el contexto</li>
+                                <li>• Adapta el estilo de respuesta</li>
+                                <li>• Cambia las herramientas disponibles</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">⚙️ Personalizable</h3>
+                            <p class="text-sm text-gray-700 mb-3">Crea modos personalizados para las necesidades específicas de tu equipo</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Archivos .chatmode.md</li>
+                                <li>• Configuración de comportamiento</li>
+                                <li>• Herramientas específicas</li>
+                                <li>• Estilo de comunicación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modos Incorporados -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🏗️ Modos Incorporados en VS Code</h2>
+                    <p class="text-gray-600 mb-6">GitHub Copilot incluye varios modos predefinidos que cubren las tareas más comunes de desarrollo.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <div class="flex items-center mb-3">
+                                <span class="text-2xl mr-3">💬</span>
+                                <h3 class="font-bold text-lg text-brand-dark-blue">Ask Mode</h3>
+                            </div>
+                            <p class="text-sm text-gray-700 mb-3"><strong>Propósito:</strong> Conversación general y consultas</p>
+                            <div class="bg-white p-3 rounded mb-3">
+                                <code class="text-xs text-blue-800">@ask ¿Cómo optimizar esta función?</code>
+                            </div>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Explicaciones detalladas</li>
+                                <li>• Análisis de código</li>
+                                <li>• Recomendaciones</li>
+                                <li>• Preguntas exploratorias</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                            <div class="flex items-center mb-3">
+                                <span class="text-2xl mr-3">✏️</span>
+                                <h3 class="font-bold text-lg text-brand-dark-blue">Edit Mode</h3>
+                            </div>
+                            <p class="text-sm text-gray-700 mb-3"><strong>Propósito:</strong> Modificaciones directas de código</p>
+                            <div class="bg-white p-3 rounded mb-3">
+                                <code class="text-xs text-green-800">@edit añade validación de email</code>
+                            </div>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Cambios específicos</li>
+                                <li>• Refactoring dirigido</li>
+                                <li>• Corrección de bugs</li>
+                                <li>• Optimizaciones puntuales</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                            <div class="flex items-center mb-3">
+                                <span class="text-2xl mr-3">🤖</span>
+                                <h3 class="font-bold text-lg text-brand-dark-blue">Agent Mode</h3>
+                            </div>
+                            <p class="text-sm text-gray-700 mb-3"><strong>Propósito:</strong> Ejecución autónoma de tareas</p>
+                            <div class="bg-white p-3 rounded mb-3">
+                                <code class="text-xs text-purple-800">@agent crear API REST completa</code>
+                            </div>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Tareas complejas multi-paso</li>
+                                <li>• Uso de herramientas automático</li>
+                                <li>• Creación de archivos</li>
+                                <li>• Ejecución de comandos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creación de Modos Personalizados -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🎨 Modos Personalizados</h2>
+                    <p class="text-gray-600 mb-6">Crea modos especializados para tu flujo de trabajo usando archivos .chatmode.md</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📁 Estructura del Archivo</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Ubicación</h4>
+                                    <div class="bg-gray-900 text-gray-100 p-2 rounded text-xs font-mono">
+                                        .github/copilot/modes/architecture.chatmode.md
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">Directorio estándar para modos personalizados</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Activación</h4>
+                                    <div class="bg-white p-2 rounded text-xs">
+                                        <code>@architecture diseña la arquitectura de microservicios</code>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">Usa @ seguido del nombre del archivo (sin extensiones)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📄 Ejemplo: architecture.chatmode.md</h3>
+                            <div class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-y-auto max-h-80">
+                                <pre><code>---
+name: Architecture Mode
+description: Especialista en diseño de arquitecturas
+version: 1.0
+author: team-architecture
+---
+
+# Modo Arquitectura
+
+Eres un arquitecto de software especializado en:
+
+## Enfoque Principal
+- Diseño de sistemas escalables
+- Patrones arquitectónicos (DDD, Hexagonal, Clean)
+- Microservicios y comunicación entre servicios
+- Performance y optimización
+
+## Estilo de Respuesta
+- Comienza con diagrama conceptual
+- Explica decisiones arquitectónicas
+- Incluye pros/contras de alternativas
+- Considera escalabilidad desde el inicio
+
+## Herramientas Preferidas
+- Diagramas C4 para visualización
+- Event Storming para modelado
+- API-First approach
+- Documentación ADR (Architecture Decision Records)
+
+## Consideraciones Clave
+1. **Escalabilidad**: ¿Cómo crecerá el sistema?
+2. **Mantenibilidad**: ¿Qué tan fácil será modificar?
+3. **Testing**: ¿Cómo se probará cada componente?
+4. **Observabilidad**: ¿Cómo se monitoreará?
+5. **Seguridad**: ¿Qué vectores de ataque existen?
+
+## Formato de Entrega
+```
+## Arquitectura Propuesta
+[Descripción general]
+
+## Componentes Principales
+[Lista de componentes y responsabilidades]
+
+## Flujo de Datos
+[Cómo se mueven los datos]
+
+## Decisiones de Diseño
+[Explicación de decisiones clave]
+
+## Próximos Pasos
+[Plan de implementación]
+```</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modos Especializados Útiles -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🛠️ Modos Especializados Útiles</h2>
+                    <p class="text-gray-600 mb-6">Ideas de modos personalizados que pueden transformar tu productividad.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🐛 debug.chatmode.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Especialista en resolución de problemas</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Análisis sistemático de errores</li>
+                                <li>• Estrategias de logging</li>
+                                <li>• Reproducción de bugs</li>
+                                <li>• Root cause analysis</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>@debug analiza este stack trace</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🧪 testing.chatmode.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Experto en calidad y testing</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Estrategias de testing</li>
+                                <li>• Test cases completos</li>
+                                <li>• Mocking y fixtures</li>
+                                <li>• Coverage analysis</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>@testing crea suite de tests</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-teal-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">📚 docs.chatmode.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Especialista en documentación técnica</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• README comprehensivos</li>
+                                <li>• API documentation</li>
+                                <li>• User guides</li>
+                                <li>• Technical specifications</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>@docs documenta esta API</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">⚡ performance.chatmode.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Experto en optimización</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Profiling y benchmarking</li>
+                                <li>• Optimización de consultas</li>
+                                <li>• Memory management</li>
+                                <li>• Scaling strategies</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>@performance optimiza esta función</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-pink-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🔒 security.chatmode.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Especialista en seguridad</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Security audits</li>
+                                <li>• Vulnerability assessment</li>
+                                <li>• OWASP compliance</li>
+                                <li>• Secure coding practices</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>@security revisa vulnerabilidades</code>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h3 class="font-bold text-brand-dark-blue mb-2">🎨 ui.chatmode.md</h3>
+                            <p class="text-sm text-gray-700 mb-3">Experto en interfaces de usuario</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Design systems</li>
+                                <li>• Componentes reutilizables</li>
+                                <li>• Accesibilidad (a11y)</li>
+                                <li>• UX patterns</li>
+                            </ul>
+                            <div class="mt-3 bg-white p-2 rounded text-xs">
+                                <code>@ui crea componente accesible</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Configuración y Gestión -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">⚙️ Configuración y Gestión de Modos</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">🔧 Configuración en VS Code</h3>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-xs border-collapse border border-gray-300">
+                                    <thead>
+                                        <tr class="bg-gray-100">
+                                            <th class="border border-gray-300 p-2 text-left">Configuración</th>
+                                            <th class="border border-gray-300 p-2 text-left">Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border border-gray-300 p-2 font-mono">github.copilot.chat.chatModes</td>
+                                            <td class="border border-gray-300 p-2 text-green-600">true</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-300 p-2 font-mono">github.copilot.chat.customModes</td>
+                                            <td class="border border-gray-300 p-2 text-green-600">enabled</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border border-gray-300 p-2 font-mono">github.copilot.chat.modeDirectory</td>
+                                            <td class="border border-gray-300 p-2 font-mono">.github/copilot/modes</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">📋 Comandos Útiles</h3>
+                            <div class="space-y-3">
+                                <div class="bg-gray-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Ver modos disponibles</h4>
+                                    <code class="text-xs bg-white p-1 rounded block mt-1">@modes</code>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Cambiar modo</h4>
+                                    <code class="text-xs bg-white p-1 rounded block mt-1">@architecture</code>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Volver al modo por defecto</h4>
+                                    <code class="text-xs bg-white p-1 rounded block mt-1">@ask</code>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded-lg">
+                                    <h4 class="font-semibold text-sm">Recargar modos</h4>
+                                    <code class="text-xs bg-white p-1 rounded block mt-1">F1 → Reload Chat Modes</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ventajas de los Modos -->
+                <div class="bg-gradient-to-r from-teal-600 to-cyan-600 p-8 rounded-lg shadow-md text-white">
+                    <h2 class="text-2xl font-bold mb-6">🚀 Ventajas de Usar Modos de Chat</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                            <div class="text-3xl mb-3">🎯</div>
+                            <h3 class="font-bold text-lg mb-2">Precisión</h3>
+                            <p class="text-sm opacity-90">Respuestas más específicas y relevantes al contexto</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                            <div class="text-3xl mb-3">⚡</div>
+                            <h3 class="font-bold text-lg mb-2">Eficiencia</h3>
+                            <p class="text-sm opacity-90">Menos iteraciones para obtener el resultado deseado</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                            <div class="text-3xl mb-3">🔧</div>
+                            <h3 class="font-bold text-lg mb-2">Especialización</h3>
+                            <p class="text-sm opacity-90">Herramientas y enfoques específicos por dominio</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                            <div class="text-3xl mb-3">🎨</div>
+                            <h3 class="font-bold text-lg mb-2">Personalización</h3>
+                            <p class="text-sm opacity-90">Adaptación completa a tu flujo de trabajo</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <p class="text-xl font-semibold">Los modos de chat convierten a Copilot en un equipo de especialistas virtuales</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modo-agente" class="content-section">
+                <h1 class="text-4xl font-bold text-brand-dark-blue mb-4">🤖 Modo Agente</h1>
+                <p class="text-lg text-gray-600 mb-8">Experimenta el futuro del desarrollo con un asistente autónomo que puede ejecutar tareas complejas usando herramientas reales del sistema.</p>
+                
+                <!-- ¿Qué es el Modo Agente? -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🧠 ¿Qué es el Modo Agente?</h2>
+                    <p class="text-gray-600 mb-6">El modo agente transforma GitHub Copilot de un asistente conversacional en un desarrollador autónomo capaz de ejecutar tareas complejas.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🛠️ Autonomía</h3>
+                            <p class="text-sm text-gray-700 mb-3">Ejecuta múltiples pasos sin intervención humana</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Crea archivos automáticamente</li>
+                                <li>• Ejecuta comandos del sistema</li>
+                                <li>• Instala dependencias</li>
+                                <li>• Configura entornos</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border-l-4 border-green-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🔧 Herramientas</h3>
+                            <p class="text-sm text-gray-700 mb-3">Acceso directo a herramientas del desarrollador</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• Editor de archivos</li>
+                                <li>• Terminal y shell</li>
+                                <li>• Sistema de archivos</li>
+                                <li>• Navegador integrado</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🎯 Objetivos</h3>
+                            <p class="text-sm text-gray-700 mb-3">Enfoque en completar tareas complejas de extremo a extremo</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• APIs completas</li>
+                                <li>• Aplicaciones funcionales</li>
+                                <li>• Configuraciones de proyecto</li>
+                                <li>• Pipelines de CI/CD</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activación y Configuración -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🚀 Activación del Modo Agente</h2>
+                    <p class="text-gray-600 mb-6">El modo agente requiere configuración específica y consentimiento explícito para ejecutar herramientas.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">⚙️ Configuración Requerida</h3>
+                            <div class="space-y-4">
+                                <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                                    <h4 class="font-semibold text-sm text-yellow-800 mb-2">⚠️ Configuración Crítica</h4>
+                                    <div class="bg-gray-900 text-gray-100 p-3 rounded text-xs font-mono">
+                                        <pre>{
+  "github.copilot.chat.agent.enabled": true,
+  "github.copilot.chat.agent.toolsets": [
+    "filesystem",
+    "terminal", 
+    "editor"
+  ]
+}</pre>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                                    <h4 class="font-semibold text-sm text-red-800 mb-2">🔒 Modo de Aprobación</h4>
+                                    <div class="bg-gray-900 text-gray-100 p-3 rounded text-xs font-mono">
+                                        <pre>{
+  "github.copilot.chat.agent.approval": "manual", 
+  "github.copilot.chat.agent.autoApprove": false
+}</pre>
+                                    </div>
+                                    <p class="text-xs text-red-600 mt-2">¡IMPORTANTE! Nunca habilites auto-aprobación sin entender los riesgos</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-4">🎮 Comandos de Activación</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Activación Básica</h4>
+                                    <div class="bg-white p-2 rounded text-sm">
+                                        <code class="text-blue-800">@agent crea una API REST para gestión de usuarios</code>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Con Herramientas Específicas</h4>
+                                    <div class="bg-white p-2 rounded text-sm">
+                                        <code class="text-green-800">@agent --tools filesystem,terminal setup proyecto React</code>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-semibold text-sm text-gray-800 mb-2">Modo Interactivo</h4>
+                                    <div class="bg-white p-2 rounded text-sm">
+                                        <code class="text-purple-800">@agent --interactive migrar base de datos</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Herramientas Disponibles -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🛠️ Herramientas Disponibles</h2>
+                    <p class="text-gray-600 mb-6">El modo agente accede a diferentes conjuntos de herramientas (toolsets) según la configuración.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">📁 Filesystem</h3>
+                            <p class="text-sm text-gray-700 mb-3">Manipulación completa del sistema de archivos</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• <code>create_file</code> - Crear archivos</li>
+                                <li>• <code>edit_file</code> - Modificar contenido</li>
+                                <li>• <code>delete_file</code> - Eliminar archivos</li>
+                                <li>• <code>list_directory</code> - Explorar carpetas</li>
+                                <li>• <code>move_file</code> - Mover/renombrar</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🖥️ Terminal</h3>
+                            <p class="text-sm text-gray-700 mb-3">Ejecución de comandos del sistema</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• <code>run_command</code> - Ejecutar comandos</li>
+                                <li>• <code>install_package</code> - npm/pip install</li>
+                                <li>• <code>git_operations</code> - Comandos git</li>
+                                <li>• <code>build_project</code> - Scripts de build</li>
+                                <li>• <code>test_runner</code> - Ejecutar tests</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">✏️ Editor</h3>
+                            <p class="text-sm text-gray-700 mb-3">Integración con el editor de VS Code</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• <code>open_file</code> - Abrir en editor</li>
+                                <li>• <code>goto_line</code> - Navegar a línea</li>
+                                <li>• <code>find_replace</code> - Buscar/reemplazar</li>
+                                <li>• <code>format_code</code> - Formatear código</li>
+                                <li>• <code>apply_fix</code> - Aplicar correcciones</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🌐 Browser</h3>
+                            <p class="text-sm text-gray-700 mb-3">Navegador simple integrado</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• <code>navigate_to</code> - Ir a URL</li>
+                                <li>• <code>extract_content</code> - Obtener contenido</li>
+                                <li>• <code>take_screenshot</code> - Capturar pantalla</li>
+                                <li>• <code>test_response</code> - Probar endpoints</li>
+                                <li>• <code>monitor_network</code> - Ver requests</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-pink-50 p-6 rounded-lg border-l-4 border-pink-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🔍 Search</h3>
+                            <p class="text-sm text-gray-700 mb-3">Búsqueda avanzada en codebase</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• <code>semantic_search</code> - Búsqueda semántica</li>
+                                <li>• <code>grep_search</code> - Búsqueda por texto</li>
+                                <li>• <code>file_search</code> - Buscar archivos</li>
+                                <li>• <code>symbol_search</code> - Buscar símbolos</li>
+                                <li>• <code>reference_search</code> - Buscar referencias</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                            <h3 class="font-bold text-lg text-brand-dark-blue mb-3">📊 Analysis</h3>
+                            <p class="text-sm text-gray-700 mb-3">Análisis y métricas del código</p>
+                            <ul class="text-xs text-gray-600 space-y-1">
+                                <li>• <code>code_analysis</code> - Análisis estático</li>
+                                <li>• <code>dependency_tree</code> - Árbol de dependencias</li>
+                                <li>• <code>performance_check</code> - Análisis de rendimiento</li>
+                                <li>• <code>security_scan</code> - Escaneo de seguridad</li>
+                                <li>• <code>test_coverage</code> - Cobertura de tests</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flujo de Trabajo del Agente -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">🔄 Flujo de Trabajo del Agente</h2>
+                    <p class="text-gray-600 mb-6">Comprende cómo el agente planifica y ejecuta tareas complejas paso a paso.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">1</span>
+                                <h3 class="font-bold text-lg text-brand-dark-blue">Análisis y Planificación</h3>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-semibold text-sm mb-2">El agente analiza:</h4>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• Complejidad de la tarea</li>
+                                        <li>• Herramientas necesarias</li>
+                                        <li>• Dependencias del proyecto</li>
+                                        <li>• Posibles riesgos</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm mb-2">Genera un plan:</h4>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• Pasos específicos a seguir</li>
+                                        <li>• Orden de ejecución</li>
+                                        <li>• Herramientas por paso</li>
+                                        <li>• Puntos de verificación</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2</span>
+                                <h3 class="font-bold text-lg text-brand-dark-blue">Solicitud de Aprobación</h3>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-sm mb-2">El agente presenta:</h4>
+                                <ul class="text-xs text-gray-700 space-y-1">
+                                    <li>• Plan detallado de ejecución</li>
+                                    <li>• Lista de herramientas a usar</li>
+                                    <li>• Comandos específicos a ejecutar</li>
+                                    <li>• Archivos que se crearán/modificarán</li>
+                                </ul>
+                                <div class="mt-3 p-2 bg-yellow-50 rounded text-xs">
+                                    <strong>⚠️ Punto de Control:</strong> Revisa cuidadosamente antes de aprobar
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-purple-100 to-pink-100 p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">3</span>
+                                <h3 class="font-bold text-lg text-brand-dark-blue">Ejecución Autónoma</h3>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-semibold text-sm mb-2">Durante la ejecución:</h4>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• Ejecuta pasos secuencialmente</li>
+                                        <li>• Monitorea resultados</li>
+                                        <li>• Adapta plan si es necesario</li>
+                                        <li>• Reporta progreso en tiempo real</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-sm mb-2">Capacidades avanzadas:</h4>
+                                    <ul class="text-xs text-gray-700 space-y-1">
+                                        <li>• Manejo de errores automático</li>
+                                        <li>• Retry con estrategias diferentes</li>
+                                        <li>• Rollback en caso de fallo</li>
+                                        <li>• Logging detallado de acciones</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">4</span>
+                                <h3 class="font-bold text-lg text-brand-dark-blue">Verificación y Reporte</h3>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-sm mb-2">Al finalizar:</h4>
+                                <ul class="text-xs text-gray-700 space-y-1">
+                                    <li>• Verifica que los objetivos se cumplieron</li>
+                                    <li>• Ejecuta tests automáticos si aplica</li>
+                                    <li>• Genera reporte de cambios realizados</li>
+                                    <li>• Sugiere próximos pasos si es necesario</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejemplos Prácticos -->
+                <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold text-brand-medium-blue mb-6">💡 Ejemplos Prácticos del Modo Agente</h2>
+                    <p class="text-gray-600 mb-6">Casos de uso reales que demuestran el poder del modo agente.</p>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="bg-blue-50 p-6 rounded-lg">
+                                <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🚀 Setup de Proyecto Completo</h3>
+                                <div class="bg-white p-3 rounded mb-3">
+                                    <code class="text-sm text-blue-800">@agent crea un proyecto Next.js con TypeScript, Tailwind, Prisma y testing configurado</code>
+                                </div>
+                                <div class="text-xs text-gray-600">
+                                    <p><strong>Pasos automáticos:</strong></p>
+                                    <ul class="space-y-1 mt-2">
+                                        <li>• Ejecuta <code>npx create-next-app@latest</code></li>
+                                        <li>• Instala dependencias adicionales</li>
+                                        <li>• Configura Tailwind CSS</li>
+                                        <li>• Setup Prisma con esquema base</li>
+                                        <li>• Configura Jest y Testing Library</li>
+                                        <li>• Crea estructura de carpetas</li>
+                                        <li>• Genera archivos de configuración</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-green-50 p-6 rounded-lg">
+                                <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🔧 Migración de Dependencias</h3>
+                                <div class="bg-white p-3 rounded mb-3">
+                                    <code class="text-sm text-green-800">@agent migra de Webpack 4 a Vite manteniendo toda la funcionalidad</code>
+                                </div>
+                                <div class="text-xs text-gray-600">
+                                    <p><strong>Proceso automático:</strong></p>
+                                    <ul class="space-y-1 mt-2">
+                                        <li>• Analiza configuración actual</li>
+                                        <li>• Desinstala dependencias obsoletas</li>
+                                        <li>• Instala Vite y plugins necesarios</li>
+                                        <li>• Convierte webpack.config.js a vite.config.js</li>
+                                        <li>• Actualiza scripts en package.json</li>
+                                        <li>• Ejecuta tests para verificar funcionamiento</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-purple-50 p-6 rounded-lg">
+                                <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🎯 Implementación de Feature</h3>
+                                <div class="bg-white p-3 rounded mb-3">
+                                    <code class="text-sm text-purple-800">@agent implementa sistema de autenticación JWT con registro, login y middleware</code>
+                                </div>
+                                <div class="text-xs text-gray-600">
+                                    <p><strong>Implementación completa:</strong></p>
+                                    <ul class="space-y-1 mt-2">
+                                        <li>• Crea modelos de usuario</li>
+                                        <li>• Implementa controllers de auth</li>
+                                        <li>• Configura JWT y middleware</li>
+                                        <li>• Crea routes protegidas</li>
+                                        <li>• Implementa hash de passwords</li>
+                                        <li>• Genera tests unitarios e integración</li>
+                                        <li>• Actualiza documentación API</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-6 rounded-lg">
+                                <h3 class="font-bold text-lg text-brand-dark-blue mb-3">🔍 Debugging Complejo</h3>
+                                <div class="bg-white p-3 rounded mb-3">
+                                    <code class="text-sm text-orange-800">@agent encuentra y corrige el memory leak en la aplicación</code>
+                                </div>
+                                <div class="text-xs text-gray-600">
+                                    <p><strong>Proceso de debugging:</strong></p>
+                                    <ul class="space-y-1 mt-2">
+                                        <li>• Analiza métricas de memoria</li>
+                                        <li>• Ejecuta profiling automático</li>
+                                        <li>• Identifica listeners no removidos</li>
+                                        <li>• Implementa cleanup en componentes</li>
+                                        <li>• Añade monitoring de memoria</li>
+                                        <li>• Ejecuta stress tests</li>
+                                        <li>• Documenta la solución</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consideraciones de Seguridad -->
+                <div class="bg-red-50 p-8 rounded-lg shadow-md mb-8 border-l-4 border-red-500">
+                    <h2 class="text-2xl font-bold text-red-800 mb-6">🔒 Consideraciones de Seguridad Críticas</h2>
+                    <p class="text-red-700 mb-6">El modo agente tiene capacidades poderosas que requieren precauciones especiales.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-bold text-lg text-red-800 mb-4">⚠️ Riesgos Potenciales</h3>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded">
+                                    <h4 class="font-semibold text-sm text-red-700">Ejecución de Comandos Destructivos</h4>
+                                    <p class="text-xs text-red-600">El agente puede ejecutar <code>rm -rf</code>, <code>DROP DATABASE</code>, etc.</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <h4 class="font-semibold text-sm text-red-700">Acceso al Sistema de Archivos</h4>
+                                    <p class="text-xs text-red-600">Puede leer, modificar o eliminar archivos críticos del sistema</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <h4 class="font-semibold text-sm text-red-700">Instalación de Software</h4>
+                                    <p class="text-xs text-red-600">Puede instalar paquetes maliciosos o versiones vulnerables</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <h4 class="font-semibold text-sm text-red-700">Exposición de Datos Sensibles</h4>
+                                    <p class="text-xs text-red-600">Podría exponer secrets, tokens o información confidencial</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-bold text-lg text-red-800 mb-4">✅ Mejores Prácticas de Seguridad</h3>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded">
+                                    <h4 class="font-semibold text-sm text-green-700">Revisión Manual Obligatoria</h4>
+                                    <p class="text-xs text-gray-600">NUNCA habilites auto-aprobación. Revisa cada plan detalladamente</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <h4 class="font-semibold text-sm text-green-700">Entorno Aislado</h4>
+                                    <p class="text-xs text-gray-600">Usa containers o VMs para aislar la ejecución del agente</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <h4 class="font-semibold text-sm text-green-700">Backup y Versionado</h4>
+                                    <p class="text-xs text-gray-600">Asegúrate de tener backups antes de ejecutar cambios importantes</p>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <h4 class="font-semibold text-sm text-green-700">Limitación de Herramientas</h4>
+                                    <p class="text-xs text-gray-600">Restringe toolsets según el nivel de confianza requerido</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded mt-6">
+                        <h4 class="font-bold text-red-800 text-center">⚠️ REGLA DE ORO: Si no entiendes lo que va a hacer el agente, NO lo apruebes ⚠️</h4>
+                    </div>
+                </div>
+
+                <!-- El Futuro del Desarrollo -->
+                <div class="bg-gradient-to-r from-indigo-600 to-purple-600 p-8 rounded-lg shadow-md text-white">
+                    <h2 class="text-2xl font-bold mb-6">🚀 El Futuro del Desarrollo con Agentes</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <div class="text-3xl mb-3">🎯</div>
+                            <h3 class="font-bold text-lg mb-2">Desarrollo Dirigido por Objetivos</h3>
+                            <p class="text-sm opacity-90">Define qué quieres lograr, no cómo hacerlo. El agente encuentra la mejor ruta.</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <div class="text-3xl mb-3">⚡</div>
+                            <h3 class="font-bold text-lg mb-2">Velocidad Exponencial</h3>
+                            <p class="text-sm opacity-90">Tareas que tomaban horas ahora se completan en minutos con mayor precisión.</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                            <div class="text-3xl mb-3">🧠</div>
+                            <h3 class="font-bold text-lg mb-2">Conocimiento Acumulativo</h3>
+                            <p class="text-sm opacity-90">El agente aprende de cada interacción y mejora sus capacidades continuamente.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <p class="text-xl font-semibold">El modo agente representa el siguiente gran salto en productividad para desarrolladores</p>
+                        <p class="text-lg mt-2 opacity-90">Úsalo sabiamente y transformará tu forma de desarrollar software</p>
                     </div>
                 </div>
             </div>
@@ -927,7 +3017,7 @@
                                             <ul class="text-xs text-gray-600 space-y-1">
                                                 <li>• Elementos completados por período</li>
                                                 <li>• Distribución por usuario</li>
-                                                <li>• Métricas de tiempo y estimación</li>
+                                                <li>• Mé
                                             </ul>
                                         </div>
                                         <div>

@@ -1,48 +1,71 @@
+---
+# PROTOCOLO DE SESIÓN: VIBE CODING
+version: 2.0
+description: "Define el flujo de trabajo estructurado para la generación de código, asegurando la captura completa del contexto antes de la implementación."
+---
+
 # Guía para Sesiones de Vibe Coding con IA
 
-## Utiliza el siguiente formato para estructurar la solicitud:
+<WORKFLOW>
+    <STEP n="1" name="CONTEXT_GATHERING">
+        **Recopilación de Contexto**: Para iniciar, utiliza la plantilla `<REQUEST_TEMPLATE>` para guiar al desarrollador a proporcionar toda la información necesaria. No procedas hasta que todas las secciones relevantes estén completas.
+    </STEP>
+    <STEP n="2" name="PLANNING">
+        **Plan de Implementación (Chain of Thought)**: Una vez recopilado el contexto, verbaliza tu plan. Ejemplo: "Entendido. Para crear el endpoint, primero definiré el modelo Pydantic, luego escribiré la lógica de la ruta en FastAPI, añadiré el manejo de errores y finalmente lo guardaré en la base de datos. ¿Procedo?".
+    </STEP>
+    <STEP n="3" name="EXECUTION">
+        **Generación de Código**: Escribe el código siguiendo el plan aprobado. Aplica las mejores prácticas correspondientes al rol y stack tecnológico definido.
+    </STEP>
+    <STEP n="4" name="SELF_CRITIQUE">
+        **Revisión y Auto-Crítica**: Antes de mostrar el código al desarrollador, revísalo internamente. Pregúntate: "¿El código cumple TODOS los requisitos funcionales? ¿Sigue el formato de salida deseado? ¿Respeta las consideraciones adicionales?". Si encuentras una deficiencia, corrígela.
+    </STEP>
+    <STEP n="5" name="DELIVERY">
+        **Entrega con Explicación**: Provee el código final junto con una breve explicación de las decisiones clave que tomaste, tal como se especificó en el formato de salida.
+    </STEP>
+</WORKFLOW>
 
-**Rol del Agente IA:** Eres un [Tipo de experto, e.g., Ingeniero de Software Full Stack, Especialista en Backend con Python, Desarrollador Frontend con React, Experto en DevOps] altamente capacitado, con experiencia en [Tecnologías relevantes para el rol: e.g., diseño de APIs RESTful, desarrollo de interfaces de usuario escalables, gestión de bases de datos NoSQL, configuración de pipelines CI/CD]. Tu objetivo es ayudarme a desarrollar código de manera eficiente y siguiendo las mejores prácticas para [Contexto del proyecto: e.g., una aplicación web, un script de automatización, un microservicio].
+---
 
-**Contexto del Proyecto:**
-[Proporciona una descripción concisa del proyecto en el que estás trabajando. ¿Cuál es su propósito principal? ¿Cuál es su estado actual (nuevo, en desarrollo, mantenimiento)?
-Describe la arquitectura general si es relevante (e.g., monolítica, microservicios).
-Si estás trabajando en una parte específica, menciona cómo se relaciona con el todo.]
-*Ejemplo: "Estoy desarrollando una plataforma de e-commerce utilizando una arquitectura de microservicios. Actualmente, trabajo en el servicio de gestión de productos."*
+## Plantilla de Solicitud
 
-**Objetivo de la Sesión de Vibe Coding:**
-[Define claramente la tarea específica o el problema que quieres abordar en esta sesión. ¿Qué funcionalidad buscas? ¿Qué error necesitas corregir? ¿Qué refactorización quieres realizar?]
-*Ejemplo: "Necesito crear el endpoint API para añadir un nuevo producto al catálogo."*
+<REQUEST_TEMPLATE>
 
-**Requisitos Funcionales y Técnicos:**
-[Enumera los requisitos de forma detallada. Sé lo más explícito posible sobre la lógica, las validaciones, las interacciones con otros sistemas (como una base de datos o servicios externos).]
-- [Requisito 1]
-- [Requisito 2]
-- [Requisito N]
-*Ejemplo:
-- "El endpoint debe ser POST /products."
-- "Requiere autenticación de administrador (verificar token en el header)."
-- "Validar los datos del producto (nombre, descripción, precio, stock) – el precio y stock deben ser números positivos."
-- "Guardar el producto en la tabla `products` en la base de datos PostgreSQL."
-- "Si es exitoso, retornar un objeto con el producto creado y status 201."
-- "Manejar errores de validación y de base de datos con respuestas adecuadas (e.g., status 400, 500)."*
+**1. Define el Rol del Agente IA:**
+Eres un [Tipo de experto, e.g., Ingeniero de Software Full Stack]. Tu misión es desarrollar código de alta calidad, eficiente y mantenible para [Contexto del proyecto], siguiendo las mejores prácticas para [Tecnologías relevantes].
 
-**Stack Tecnológico Específico para Esta Tarea:**
-- **Lenguaje/Versión:** [e.g., Python 3.10, TypeScript 5.x]
-- **Framework/Librerías:** [e.g., FastAPI, Express.js, Spring Boot, Next.js, TypeORM, Mongoose]
-- **Base de Datos (si aplica):** [e.g., PostgreSQL, MongoDB]
-- **Entorno/Otros:** [e.g., Docker, Kubernetes, AWS Lambda, etc.]
+**2. Contexto del Proyecto:**
+[Descripción concisa del proyecto, su propósito, estado actual y arquitectura general.]
+*Ejemplo: "Estoy desarrollando una plataforma de e-commerce con microservicios. Trabajo en el servicio de gestión de productos, que es responsable de todo el ciclo de vida de un producto."*
 
-**Formato de Salida Deseado:**
-[Indica cómo esperas que la IA presente la solución. ¿Solo el fragmento de código? ¿El archivo completo? ¿Una explicación del código? ¿Pruebas unitarias?]
-- [Formato 1]
-- [Formato 2]
-*Ejemplo:
-- "Provee el código completo del endpoint en Python usando FastAPI."
-- "Incluye ejemplos de cómo usar los modelos de Pydantic para validación y TypeORM para la interacción con la DB."
-- "Añade comentarios breves para explicar las partes clave."
-- "Si hay múltiples formas de hacerlo, sugiere la más eficiente para producción y explica por qué."*
+**3. Objetivo Específico de la Sesión:**
+[Define la tarea concreta o el problema a resolver. Sé específico.]
+*Ejemplo: "Crear el endpoint API (POST /products) para añadir un nuevo producto al catálogo."*
 
-**Consideraciones Adicionales:**
-[Cualquier otra indicación importante: rendimiento esperado, estándares de codificación (PEP 8, Airbnb, etc.), seguridad (aunque la IA necesita supervisión humana en esto ), etc.]
-*Ejemplo: "Asegura que el código sea idempotente si aplica."*
+**4. Requisitos Funcionales y Técnicos (Enumerados):**
+[Lista detallada de la lógica, validaciones, interacciones y manejo de errores. Usa checkboxes para seguimiento.]
+- [ ] El endpoint debe ser `POST /products`.
+- [ ] Requiere un token de autenticación de administrador en el header `Authorization`.
+- [ ] Debe validar los datos de entrada: `name` (string, requerido), `price` (float, positivo), `stock` (integer, >= 0).
+- [ ] Debe guardar el nuevo producto en la tabla `products` de la base de datos PostgreSQL.
+- [ ] En caso de éxito, debe retornar un JSON con el producto creado y un código de estado `201 Created`.
+- [ ] En caso de error de validación, debe retornar un JSON con los detalles del error y un código de estado `400 Bad Request`.
+
+**5. Stack Tecnológico para la Tarea:**
+- **Lenguaje/Versión:** [e.g., Python 3.11]
+- **Framework/Librerías:** [e.g., FastAPI, Pydantic, SQLAlchemy]
+- **Base de Datos:** [e.g., PostgreSQL]
+- **Otros:** [e.g., Docker]
+
+**6. Formato de Salida Deseado:**
+[Especifica cómo quieres recibir la solución.]
+- [ ] Código completo del archivo/módulo.
+- [ ] Incluir comentarios JSDoc/TSDoc/PyDoc para funciones y clases.
+- [ ] Proveer una breve explicación de las decisiones de diseño.
+- [ ] Incluir un ejemplo de cómo invocar la nueva funcionalidad (e.g., un comando `curl`).
+- [ ] Sugerir un borrador para una prueba unitaria (usando, por ejemplo, `pytest`).
+
+**7. Consideraciones Adicionales:**
+[Cualquier otra directiva: estándares de codificación (PEP 8), rendimiento, seguridad, idempotencia, etc.]
+*Ejemplo: "Asegúrate de que la conexión a la base de datos se maneje a través de inyección de dependencias de FastAPI."*
+
+</REQUEST_TEMPLATE>
